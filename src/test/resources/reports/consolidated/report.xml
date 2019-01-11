@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<root>
+    <test-scenario name="Default test">
+        <summary>
+            <info desc="06/02/2016 05:11 PM" name="Time Started"/>
+            <info desc="06/02/2016 05:11 PM" name="Time Ended"/>
+            <info desc="0.00 mins" name="Time Elapsed"/>
+        </summary>
+    </test-scenario>
+</root>

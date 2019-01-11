@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="ISO-8859-1"?><html>
+<head>
+<title>R3 Report Manager</title>
+<script src="http://code.jquery.com/jquery-1.11.0.min.js">//</script>
+<script>
+	$( document ).ready(function() {
+
+		function expandContent(element) {
+			element.parent().nextAll(".box, .line").show();
+			element.attr("class","collapse");
+			element.unbind("click");
+			element.text("[-]");
+			element.click(function( event ) {
+				collapseContent($(this));
+			});
+		};
+		
+		function collapseContent(element) {
+			element.parent().nextAll(".box, .line").hide();
+			element.attr("class","expand");
+			element.unbind("click");
+			element.text("[+]");
+			element.click(function( event ) {
+				expandContent($(this));
+			});
+		};
+		
+		$( "span.expand" ).click(function( event ) {
+			expandContent($(this));
+		});
+		
+		$( "span.collapse" ).click(function( event ) {
+			collapseContent($(this));
+		});
+		
+		$( "span.collapse-all" ).click(function( event ) {
+			$( "span.collapse" ).click();
+		});
+		
+		$( "span.expand-all" ).click(function( event ) {
+			$( "span.expand" ).click();
+		});
+		
+		$( "span.collapse" ).click();
+		
+		$( "div.box[id='summary']" ).find("span.expand:first").click();
+		
+	});
+    </script>
+<style>
+		h1 {
+			font-size: 16pt;
+			margin: 10px 0px 0px 0px;
+		}
+		div.box {
+			font-family:"Calibri";
+			font-size: 9pt;
+			display: block;
+			width: inherit;
+			border: none;
+			margin: 0px 5px 6px 5px;
+			padding-bottom: 0px;
+		}
+		div.line {
+			font-family:"Calibri";
+			font-size: 9pt;
+			display: block;
+			width: inherit;
+			border: solid #aaa 1px;
+			margin: 4px 5px 4px 5px;
+			padding: 0px 3px 0px 3px;
+		}
+		div.header1 {
+			font-family:"Calibri";
+			font-size: 10pt;
+			color: white;
+			background-color: #333;
+			width: inherit;
+			border: solid #aaa 1px;
+			min-height: 19px;
+			padding: 0px 3px 1px 3px;
+			margin: 5px 0px 5px 0px;
+		}
+		div.header2 {
+			font-family:"Calibri";
+			font-size: 10pt;
+			color: black;
+			background-color: #cfcfcf;
+			width: inherit;
+			border: solid #bfbfbf 1px;
+			min-height: 19px;
+			padding: 0px 3px 1px 3px;
+			margin: 5px 0px 5px 0px;
+		}
+		table.metrics {
+			font-family:"Calibri";
+			font-size: 9pt;
+			border: solid gray 1px;
+		}
+		table.metrics td{
+			text-align:center;
+			border: solid #aaa 1px;
+		}
+		span.label {
+			font-family:"Calibri";
+			color: black;
+			font-weight: bold;
+		}
+		span.passed {
+			color: green;
+		}
+		span.failed {
+			color: red;
+		}
+		span.warning {
+			color: orange;
+		}
+		span.norun, span.incomplete {
+			color: grey;
+		}
+		span.info {
+			color: #3377ff;
+		}
+		span.done {
+			color: green;
+		}
+		span.status {
+			color: grey;
+		}
+		span.expand, span.collapse {
+			font-family:"Courier";
+			font-size: 10pt;
+			color: grey;
+			font-weight: bold;
+		}
+		a:link {
+			color: #3377ff;
+		}
+		
+	</style>
+</head>
+<body>
+<center>
+<table class="metrics">
+<tr>
+<th width="105px">Level</th>
+<th width="75px">
+<span class="passed">Passed</span>
+</th>
+<th width="75px">
+<span class="failed">Failed</span>
+</th>
+<th width="75px">
+<span class="warning">Warning</span>
+</th>
+<th width="75px">
+<span class="incomplete">Incomplete</span>
+</th>
+<th width="75px">
+<span class="norun">No Run</span>
+</th>
+<th width="75px">Total</th>
+</tr>
+<tr>
+<td>Test Scenario</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Test Case</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+</table>
+</center>
+<h1>Test Scenario: Default test</h1>
+<div class="box" id="test-summary">
+<div class="header2">
+<span class="collapse" href="#">[-]</span>Test Execution Summary<span class="status"> | <span class="norun">No Run</span>
+</span>
+</div>
+<div class="line">
+<span class="label">Time Started</span> : 06/02/2016 05:11 PM</div>
+<div class="line">
+<span class="label">Time Ended</span> : 06/02/2016 05:11 PM</div>
+<div class="line">
+<span class="label">Time Elapsed</span> : 0.00 mins</div>
+</div>
+</body>
+</html>

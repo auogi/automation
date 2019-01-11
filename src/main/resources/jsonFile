@@ -1,0 +1,176 @@
+[{
+		Configuration: [{
+				Browser Type: Firefox,
+				OS Type: Windows
+			}
+		],
+		EmailDistribution: [{
+				EmailList: asoriano @ progrexion.com
+			}
+		],
+		Name: Test Environment,
+		Test Suite: {
+			Credit Access: [{
+					Test Case: [TC11_CA_Verify_SignUP],
+					Test Coverage Details: ""
+				}
+			],
+			Credit Advantage: [{
+					Test Case: [TC27__Verify_CreditAdvantage_Page],
+					Test Coverage Details: ""
+				}
+			],
+			Credit Attorney: [{
+					Test Case: [CreditAttorney_Signup],
+					Test Coverage Details: ""
+				}
+			],
+			Credit Options: [{					
+					Test Case: [TC29_CreditOptions_Verify_Leadcollector],
+					Test Coverage Details: ""
+				}
+			],
+			Credit Ready: [{
+					Test Case: [TC31_FSAffiliate_CreditReady_Login],
+					Test Coverage Details: ""
+				}
+			],
+			Credit Repair: [{
+					Test Case: [TC13_CR_Verify_Sign_Up, TC14_CR_Verify_FDH_Sign_Up],
+					Test Coverage Details: ""
+				}
+			],
+			CreditView: [{
+					Test Case: [TC22_CR_Verify_CreditView_SignUP],
+					Test Coverage Details: ""
+				}
+			],
+			Lexington: [{
+					Test Case: [TC02_LRP_Verify_Sign_up_FHD_E2E, TC32_LEX_SC_Verify_SignUp, TC33_LEX_MD_Verify_SignUp],
+					Test Coverage Details: ""
+				}
+			],
+			Progrexion: [{
+					Test Case: [TC24_PGX_Verify_Blog_Page, TC25_PGX_Verify_NewsRoom_Page],
+					Test Coverage Details: ""
+				}
+			]
+		}
+	}, {
+		Configuration: [{
+				Browser Type: Firefox,
+				OS Type: Windows
+			}
+		],
+		EmailDistribution: [{
+				EmailList: asoriano @ progrexion.com
+			}
+		],
+		Name: Stage Environment,
+		Test Suite: {
+			Credit Access: [{
+					Test Case: [],
+					Test Coverage Details: ""
+				}
+			],
+			Credit Advantage: [{
+					Test Case: [],
+					Test Coverage Details: ""
+				}
+			],
+			Credit Attorney: [{
+					Test Case: [],
+					Test Coverage Details: ""
+				}
+			],
+			Credit Options: [{
+					Test Case: [TC29_CreditOptions_Verify_Leadcollector],
+					Test Coverage Details: ""
+				}
+			],
+			Credit Ready: [{
+					Test Case: [],
+					Test Coverage Details: ""
+				}
+			],
+			Credit Repair: [{
+					Test Case: [],
+					Test Coverage Details: ""
+				}
+			],
+			CreditView: [{
+					Test Case: [],
+					Test Coverage Details: ""
+				}
+			],
+			Lexington: [{
+					Test Case: [],
+					Test Coverage Details: ""
+				}
+			],
+			Progrexion: [{
+					Test Case: [],
+					Test Coverage Details: ""
+				}
+			]
+		}
+	}, {
+		Configuration: [{
+				Browser Type: Firefox,
+				OS Type: Windows
+			}
+		],
+		EmailDistribution: [{
+				EmailList: asoriano @ progrexion.com
+			}
+		],
+		Name: Production Environment,
+		Test Suite: {
+			Credit Access: [{
+					Test Case: [],
+					Test Coverage Details: ""
+				}
+			],
+			Credit Advantage: [{
+					Test Case: [],
+					Test Coverage Details: ""
+				}
+			],
+			Credit Attorney: [{
+					Test Case: [],
+					Test Coverage Details: ""
+				}
+			],
+			Credit Options: [{
+					Test Case: [TC29_CreditOptions_Verify_Leadcollector],
+					Test Coverage Details: ""
+				}
+			],
+			Credit Ready: [{
+					Test Case: [],
+					Test Coverage Details: ""
+				}
+			],
+			Credit Repair: [{
+					Test Case: [],
+					Test Coverage Details: ""
+				}
+			],
+			CreditView: [{
+					Test Case: [],
+					Test Coverage Details: ""
+				}
+			],
+			Lexington: [{
+					Test Case: [],
+					Test Coverage Details: ""
+				}
+			],
+			Progrexion: [{
+					Test Case: [],
+					Test Coverage Details: ""
+				}
+			]
+		}
+	}
+]
