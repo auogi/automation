@@ -1,6 +1,6 @@
 package auto.framework.drivers;
 
-import auto.framework.TestManager;
+import auto.framework.managers.TestManager;
 
 public enum DriverSetting {
 

@@ -5,6 +5,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
+
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.Proxy;
 import org.openqa.selenium.WebDriver;
@@ -15,14 +16,12 @@ import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
-import org.testng.ITestResult;
 
-import auto.framework.TestManager;
-import auto.framework.UserAgentList;
-import auto.framework.WebManager;
-import auto.framework.WebManager.WinRegistry;
+import auto.framework.managers.TestManager;
+import auto.framework.managers.WebManager;
+import auto.framework.managers.WebManager.WinRegistry;
 
-public class IEBrowserDriver extends RemoteWebDriver implements DriverReportListener {
+public class IEBrowserDriver extends RemoteWebDriver {
 
 	/*@Override
 	public void setTestStatus(ITestResult tr, int status) {
@@ -42,10 +41,6 @@ public class IEBrowserDriver extends RemoteWebDriver implements DriverReportList
     	
     	profile = new ProfilesIni();
     	myprofile = profile.getProfile("default");
-    	
-    	if (userAgent!=null) {
-    		myprofile.setPreference("general.useragent.override", UserAgentList.valueOf(userAgent).toString()); // here, the user-agent is 'Yahoo Slurp'
-    	}
     	
     	File ffPath = new File(DriverSettings.getProperty(DriverSetting.FIREFOX_BINARY, "C:\\Program Files (x86)\\Mozilla Firefox36\\firefox.exe"));
     	

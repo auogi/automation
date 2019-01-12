@@ -14,9 +14,9 @@ import org.openqa.selenium.logging.LoggingPreferences;
 import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import auto.framework.TestManager;
-import auto.framework.UserAgentList;
+
 import auto.framework.drivers.ChromeBrowserDriver.JarFileToLocal;
+import auto.framework.managers.TestManager;
 
 public class FirefoxBrowserDriver{
 	
@@ -35,9 +35,6 @@ public class FirefoxBrowserDriver{
     	//System.setProperty("webdriver.firefox.port", "41176");    	
     	FirefoxOptions options = new FirefoxOptions();
     	
-    	if (userAgent!=null) {
-    		myprofile.setPreference("general.useragent.override", UserAgentList.valueOf(userAgent).toString()); // here, the user-agent is 'Yahoo Slurp'
-    	}
     	
     	if(DriverSettings.getProperty(DriverSetting.FIREFOX_BINARY)!=null){
 			ffPath = new File(DriverSettings.getProperty(DriverSetting.FIREFOX_BINARY));

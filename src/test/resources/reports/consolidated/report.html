@@ -1,6 +1,6 @@
-<?xml version="1.0" encoding="ISO-8859-1"?><html>
+<?xml version="1.0" encoding="UTF-8"?><html xmlns="http://www.w3.org/2000/svg">
 <head>
-<title>R3 Report Manager</title>
+<title>Progression Report Manager</title>
 <script src="http://code.jquery.com/jquery-1.11.0.min.js">//</script>
 <script>
 	$( document ).ready(function() {
@@ -33,166 +33,232 @@
 			collapseContent($(this));
 		});
 		
-		$( "span.collapse-all" ).click(function( event ) {
-			$( "span.collapse" ).click();
-		});
-		
-		$( "span.expand-all" ).click(function( event ) {
-			$( "span.expand" ).click();
-		});
-		
+
 		$( "span.collapse" ).click();
-		
-		$( "div.box[id='summary']" ).find("span.expand:first").click();
 		
 	});
     </script>
 <style>
-		h1 {
-			font-size: 16pt;
-			margin: 10px 0px 0px 0px;
-		}
-		div.box {
-			font-family:"Calibri";
-			font-size: 9pt;
-			display: block;
-			width: inherit;
-			border: none;
-			margin: 0px 5px 6px 5px;
-			padding-bottom: 0px;
-		}
-		div.line {
-			font-family:"Calibri";
-			font-size: 9pt;
-			display: block;
-			width: inherit;
-			border: solid #aaa 1px;
-			margin: 4px 5px 4px 5px;
-			padding: 0px 3px 0px 3px;
-		}
-		div.header1 {
-			font-family:"Calibri";
-			font-size: 10pt;
-			color: white;
-			background-color: #333;
-			width: inherit;
-			border: solid #aaa 1px;
-			min-height: 19px;
-			padding: 0px 3px 1px 3px;
-			margin: 5px 0px 5px 0px;
-		}
-		div.header2 {
-			font-family:"Calibri";
-			font-size: 10pt;
-			color: black;
-			background-color: #cfcfcf;
-			width: inherit;
-			border: solid #bfbfbf 1px;
-			min-height: 19px;
-			padding: 0px 3px 1px 3px;
-			margin: 5px 0px 5px 0px;
-		}
-		table.metrics {
-			font-family:"Calibri";
-			font-size: 9pt;
-			border: solid gray 1px;
-		}
-		table.metrics td{
-			text-align:center;
-			border: solid #aaa 1px;
-		}
-		span.label {
-			font-family:"Calibri";
-			color: black;
-			font-weight: bold;
-		}
-		span.passed {
-			color: green;
-		}
-		span.failed {
-			color: red;
-		}
-		span.warning {
-			color: orange;
-		}
-		span.norun, span.incomplete {
-			color: grey;
-		}
-		span.info {
-			color: #3377ff;
-		}
-		span.done {
-			color: green;
-		}
-		span.status {
-			color: grey;
-		}
-		span.expand, span.collapse {
-			font-family:"Courier";
-			font-size: 10pt;
-			color: grey;
-			font-weight: bold;
-		}
-		a:link {
-			color: #3377ff;
-		}
-		
-	</style>
+
+	div.centerit{
+        width: 90%;
+        margin: 0 auto; 
+    }
+
+    table.metrics { 
+        margin: 0 auto; 
+        float: center;
+        font-family:"Calibri";
+        font-size: 9pt;
+        border: solid gray 1px;
+    }
+
+    table.metrics td{
+            text-align:center;
+            border: solid #aaa 1px;
+    }
+
+    div.mainBox{
+            text-align:center;
+            border: solid #aaa 1px;
+            -webkit-border-radius: 10px; -moz-border-radius: 10px; border-radius: 10px;
+            padding:10px 0;
+    }
+
+    div.line {
+            font-family:"Calibri";
+            font-size: 9pt;
+            display: block;
+            width: inherit;
+            border-top: solid #aaa 1px;
+            width:inherit;
+            margin:0;
+            padding:3px 0;
+        }
+
+    div.line span {
+    	padding:0 10px;
+    }
+
+
+    h1 {
+        font-size: 16pt;
+        text-left;
+        width: 700px;
+    }       
+    div.box {
+        font-family:"Calibri";
+        font-size: 9pt;
+        display: block;     
+        width: inherit;
+        border: none;
+        margin: 0 auto; 
+        padding-bottom: 0px;
+        text-align:left;
+    }
+
+    div.header_box{
+    	float:left; width:100%; background:#aaa; color:#fff !important; -webkit-border-top-left-radius: 10px; -webkit-border-top-right-radius: 10px; -moz-border-radius-topleft: 10px; -moz-border-radius-topright: 10px; border-top-left-radius: 10px; border-top-right-radius: 10px;
+    	font-family:"Calibri";
+        font-size: 9pt;        
+        text-align:left;        
+        color: black;
+    }
+
+    div.header_box div {
+    	padding:6px 2px;
+    }
+
+    div.header {
+        float: left;
+        font-family:"Calibri";
+        font-size: 9pt;        
+        text-align:left;
+        color: white;
+        min-height: 19px;
+        width: 360px;
+    }
+
+    div.header div {
+    	padding:10px !important;
+    }
+
+    div.environment {
+        float: left;
+        width: 120px;
+    }
+
+    div.time {
+        float: left;
+        width: 180px;
+    }
+
+    div.header1 {
+    	font-family:"Calibri";
+        font-size: 9pt;        
+        text-align:left;        
+        color: black;
+        background-color: #9b9da4;        
+    }
+
+    div.header2 {
+    	font-family:"Calibri";
+        font-size: 9pt;        
+        text-align:left;        
+        color: black;
+        background-color: #ffffff;
+        width: inherit;
+        border-top: solid #bfbfbf 1px;
+        width:100%;
+        margin:0 auto;
+        min-height: 19px;        
+    }
+    span.passed {
+        color: green;
+    }
+    span.failed {
+        color: red;
+    }
+    span.warning {
+        color: orange;
+    }
+    span.norun, span.incomplete {
+        color: grey;
+    }
+    span.info {
+        color: #3377ff;
+    }
+	
+	span.webservice {
+        color: green;
+    }
+    span.done {
+        color: green;
+    }
+    span.status {
+        color: grey;
+    }
+    span.expand, span.collapse {
+        font-family:"Courier";
+        font-size: 10pt;
+        color: black;
+        font-weight: bold;
+    }
+    
+    a:link {
+        color: #3377ff;
+    }
+
+    .title_table {
+	    font-family: Calibri;
+	    font-size: 8pt;
+	    font-weight: bold;
+	    background: black;
+	    color: antiquewhite;
+    }
+
+    .title_table tr td {
+    	padding:5px 10px;
+    }
+        
+    
+    </style>
 </head>
 <body>
-<center>
-<table class="metrics">
+<div class="centerIt">
+<div class="header_box">
+<table class="title_table" width="100%">
 <tr>
-<th width="105px">Level</th>
-<th width="75px">
-<span class="passed">Passed</span>
-</th>
-<th width="75px">
-<span class="failed">Failed</span>
-</th>
-<th width="75px">
-<span class="warning">Warning</span>
-</th>
-<th width="75px">
-<span class="incomplete">Incomplete</span>
-</th>
-<th width="75px">
-<span class="norun">No Run</span>
-</th>
-<th width="75px">Total</th>
-</tr>
-<tr>
-<td>Test Scenario</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>1</td>
-<td>1</td>
-</tr>
-<tr>
-<td>Test Case</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
+<td width="30%">Default test<span class="status"> | <span class="passed">Passed</span>
+</span>
+</td>
+<td width="15%">
+<div>
+<span>Environment : </span>Test Environment</div>
+</td>
+<td width="15%">
+<div>
+<span>Browser : </span>chrome</div>
+</td>
+<td width="20%">
+<div>
+<span>Time Started : </span>01/12/2019 01:01 AM</div>
+</td>
+<td width="20%">
+<div>
+<span>End Started: </span>N/A</div>
+</td>
 </tr>
 </table>
-</center>
-<h1>Test Scenario: Default test</h1>
-<div class="box" id="test-summary">
+</div>
+<div class="mainBox">
+<div id="test-case" class="box">
+<div class="header1">
+<span href="#" class="collapse">[-]</span>Test Case: Default<span class="status"> | <span class="passed">Passed</span>
+</span>
+</div>
+<div id="test-step" class="box">
 <div class="header2">
-<span class="collapse" href="#">[-]</span>Test Execution Summary<span class="status"> | <span class="norun">No Run</span>
+<span href="#" class="collapse" style="margin-left:7px">[-]</span> Step: <span class="status"> | <span class="passed">Passed</span>
 </span>
 </div>
 <div class="line">
-<span class="label">Time Started</span> : 06/02/2016 05:11 PM</div>
+<span width="100px">01/12/2019 01:01 AM</span> | <b>
+<span class="passed">Passed</span>
+</b> | 
+		
+		
+		Navigate to https://facebook.com</div>
 <div class="line">
-<span class="label">Time Ended</span> : 06/02/2016 05:11 PM</div>
-<div class="line">
-<span class="label">Time Elapsed</span> : 0.00 mins</div>
+<span width="100px">01/12/2019 01:01 AM</span> | <b>
+<span class="passed">Passed</span>
+</b> | 
+		
+		
+		[Email TextBox] Type "auogie@gmail.com"</div>
+</div>
+</div>
+</div>
 </div>
 </body>
 </html>

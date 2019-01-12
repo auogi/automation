@@ -1,10 +1,15 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<root>
-    <test-scenario name="Default test">
-        <summary>
-            <info desc="06/02/2016 05:11 PM" name="Time Started"/>
-            <info desc="06/02/2016 05:11 PM" name="Time Ended"/>
-            <info desc="0.00 mins" name="Time Elapsed"/>
-        </summary>
+<?xml version="1.0" encoding="UTF-8"?><root>
+    <test-scenario browser="chrome" endTime="N/A" environment="Test Environment" name="Default test" startTime="01/12/2019 01:01 AM" status="Passed">
+        <test-case name="Default">
+            <summary>
+                <info desc="01/12/2019 01:01 AM" name="Time Started"/>
+                <info desc="01/12/2019 01:01 AM" name="Time Ended"/>
+                <info desc="0.26 mins" name="Time Elapsed"/>
+            </summary>
+            <test-step>
+                <report desc="Navigate to https://facebook.com" status="Passed" timestamp="01/12/2019 01:01 AM"/>
+                <report desc="[Email TextBox] Type &quot;auogie@gmail.com&quot;" status="Passed" timestamp="01/12/2019 01:01 AM"/>
+            </test-step>
+        </test-case>
     </test-scenario>
 </root>
