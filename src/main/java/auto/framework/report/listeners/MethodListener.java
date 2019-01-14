@@ -10,6 +10,7 @@ import org.testng.Reporter;
 import auto.framework.drivers.DriverSetting;
 import auto.framework.managers.TestManager;
 import auto.framework.managers.WebManager;
+import auto.framework.report.reporter.ReportLog;
 import auto.framework.webelement.WebControl;
 
 public class MethodListener implements IInvokedMethodListener {
@@ -36,6 +37,7 @@ public class MethodListener implements IInvokedMethodListener {
 
     @Override
     public void afterInvocation(IInvokedMethod method, ITestResult testResult) {
+    	
     	 if(!method.isTestMethod()) {
 	            return;
 	        }	

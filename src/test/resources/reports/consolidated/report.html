@@ -209,7 +209,7 @@
 <div class="header_box">
 <table class="title_table" width="100%">
 <tr>
-<td width="30%">Default test<span class="status"> | <span class="passed">Passed</span>
+<td width="30%">Default test<span class="status"> | <span class="failed">Failed</span>
 </span>
 </td>
 <td width="15%">
@@ -222,7 +222,7 @@
 </td>
 <td width="20%">
 <div>
-<span>Time Started : </span>01/12/2019 01:01 AM</div>
+<span>Time Started : </span>01/14/2019 12:06 AM</div>
 </td>
 <td width="20%">
 <div>
@@ -234,28 +234,353 @@
 <div class="mainBox">
 <div id="test-case" class="box">
 <div class="header1">
-<span href="#" class="collapse">[-]</span>Test Case: Default<span class="status"> | <span class="passed">Passed</span>
+<span href="#" class="collapse">[-]</span>Test Case: Validate behavior when fields are blank during sign up<span class="status"> | <span class="passed">Passed</span>
 </span>
 </div>
 <div id="test-step" class="box">
 <div class="header2">
-<span href="#" class="collapse" style="margin-left:7px">[-]</span> Step: <span class="status"> | <span class="passed">Passed</span>
+<span href="#" class="collapse" style="margin-left:7px">[-]</span> Step: Validate that all the Fields that are blank are highlighted in red<span class="status"> | <span class="passed">Passed</span>
 </span>
 </div>
 <div class="line">
-<span width="100px">01/12/2019 01:01 AM</span> | <b>
+<span width="100px">01/14/2019 12:06 AM</span> | <b>
 <span class="passed">Passed</span>
 </b> | 
 		
 		
 		Navigate to https://facebook.com</div>
 <div class="line">
-<span width="100px">01/12/2019 01:01 AM</span> | <b>
+<span width="100px">01/14/2019 12:06 AM</span> | <b>
 <span class="passed">Passed</span>
 </b> | 
 		
 		
-		[Email TextBox] Type "auogie@gmail.com"</div>
+		[Submit Button] Click element</div>
+<div class="line">
+<span width="100px">01/14/2019 12:06 AM</span> | <b>
+<span class="passed">Passed</span>
+</b> | 
+		
+		
+		Verify that FirstName is focused and is showing a tooltip with Message: "What's your name?"</div>
+<div class="line">
+<span width="100px">01/14/2019 12:06 AM</span> | <b>
+<span class="passed">Passed</span>
+</b> | 
+		
+		
+		Verify that LastName field is highlighted in red</div>
+<div class="line">
+<span width="100px">01/14/2019 12:06 AM</span> | <b>
+<span class="passed">Passed</span>
+</b> | 
+		
+		
+		Verify that Mobile/Email field is highlighted in red</div>
+<div class="line">
+<span width="100px">01/14/2019 12:06 AM</span> | <b>
+<span class="passed">Passed</span>
+</b> | 
+		
+		
+		Verify that Password field is highlighted in red</div>
+<div class="line">
+<span width="100px">01/14/2019 12:06 AM</span> | <b>
+<span class="passed">Passed</span>
+</b> | 
+		
+		
+		Verify that Gender Radio Buttons are highlighted in red</div>
+</div>
+<div id="test-step" class="box">
+<div class="header2">
+<span href="#" class="collapse" style="margin-left:7px">[-]</span> Step: Validate that if a textbox field is focused, that field will display a tooltip<span class="status"> | <span class="passed">Passed</span>
+</span>
+</div>
+<div class="line">
+<span width="100px">01/14/2019 12:06 AM</span> | <b>
+<span class="passed">Passed</span>
+</b> | 
+		
+		
+		[LastName TextBox] Click element</div>
+<div class="line">
+<span width="100px">01/14/2019 12:06 AM</span> | <b>
+<span class="passed">Passed</span>
+</b> | 
+		
+		
+		Verify that LastName is focused and is showing a tooltip with Message: "What's your name?"</div>
+<div class="line">
+<span width="100px">01/14/2019 12:06 AM</span> | <b>
+<span class="passed">Passed</span>
+</b> | 
+		
+		
+		Verify that FirstName field is highlighted in red</div>
+<div class="line">
+<span width="100px">01/14/2019 12:06 AM</span> | <b>
+<span class="passed">Passed</span>
+</b> | 
+		
+		
+		[Mobile or Email TextBox] Click element</div>
+<div class="line">
+<span width="100px">01/14/2019 12:06 AM</span> | <b>
+<span class="passed">Passed</span>
+</b> | 
+		
+		
+		Verify that Mobile/Email is focused and is showing a tooltip with Message: "You’ll use this when you log in and if you ever need to reset your password."</div>
+<div class="line">
+<span width="100px">01/14/2019 12:06 AM</span> | <b>
+<span class="passed">Passed</span>
+</b> | 
+		
+		
+		Verify that LastName field is highlighted in red</div>
+</div>
+<div id="test-step" class="box">
+<div class="header2">
+<span href="#" class="collapse" style="margin-left:7px">[-]</span> Step: Validate that if a Gender is selected, the red highlight disappears<span class="status"> | <span class="passed">Passed</span>
+</span>
+</div>
+<div class="line">
+<span width="100px">01/14/2019 12:06 AM</span> | <b>
+<span class="passed">Passed</span>
+</b> | 
+		
+		
+		[Male Radio Button] Click element</div>
+<div class="line">
+<span width="100px">01/14/2019 12:06 AM</span> | <b>
+<span class="passed">Passed</span>
+</b> | 
+		
+		
+		Verify that Gender Radio Buttons are not highlighted in red after selecting a gender</div>
+</div>
+<div id="test-step" class="box">
+<div class="header2">
+<span href="#" class="collapse" style="margin-left:7px">[-]</span> Step: Validate that if all the text fields are populated the red highlight disappears<span class="status"> | <span class="passed">Passed</span>
+</span>
+</div>
+<div class="line">
+<span width="100px">01/14/2019 12:06 AM</span> | <b>
+<span class="passed">Passed</span>
+</b> | 
+		
+		
+		[FirstName TextBox] Type "Tester"</div>
+<div class="line">
+<span width="100px">01/14/2019 12:06 AM</span> | <b>
+<span class="passed">Passed</span>
+</b> | 
+		
+		
+		[LastName TextBox] Type "Tester"</div>
+<div class="line">
+<span width="100px">01/14/2019 12:06 AM</span> | <b>
+<span class="passed">Passed</span>
+</b> | 
+		
+		
+		[Mobile or Email TextBox] Type "auogie323@gmail.com"</div>
+<div class="line">
+<span width="100px">01/14/2019 12:06 AM</span> | <b>
+<span class="passed">Passed</span>
+</b> | 
+		
+		
+		[Mobile or Email Confirm TextBox] Type "auogie323@gmail.com"</div>
+<div class="line">
+<span width="100px">01/14/2019 12:06 AM</span> | <b>
+<span class="passed">Passed</span>
+</b> | 
+		
+		
+		[Birthday Day] Select Text "2"</div>
+<div class="line">
+<span width="100px">01/14/2019 12:06 AM</span> | <b>
+<span class="passed">Passed</span>
+</b> | 
+		
+		
+		[Birthday Month] Select Text "Aug"</div>
+<div class="line">
+<span width="100px">01/14/2019 12:06 AM</span> | <b>
+<span class="passed">Passed</span>
+</b> | 
+		
+		
+		[Birthday Year] Select Text "1986"</div>
+<div class="line">
+<span width="100px">01/14/2019 12:06 AM</span> | <b>
+<span class="passed">Passed</span>
+</b> | 
+		
+		
+		[Password TextBox] Type "a"</div>
+<div class="line">
+<span width="100px">01/14/2019 12:06 AM</span> | <b>
+<span class="passed">Passed</span>
+</b> | 
+		
+		
+		[Male Radio Button] Click element</div>
+<div class="line">
+<span width="100px">01/14/2019 12:06 AM</span> | <b>
+<span class="passed">Passed</span>
+</b> | 
+		
+		
+		Verify that FirstName field is not highlighted in red</div>
+<div class="line">
+<span width="100px">01/14/2019 12:06 AM</span> | <b>
+<span class="passed">Passed</span>
+</b> | 
+		
+		
+		Verify that LastName field is not highlighted in red</div>
+<div class="line">
+<span width="100px">01/14/2019 12:06 AM</span> | <b>
+<span class="passed">Passed</span>
+</b> | 
+		
+		
+		Verify that Mobile/Email field is not highlighted in red</div>
+<div class="line">
+<span width="100px">01/14/2019 12:06 AM</span> | <b>
+<span class="passed">Passed</span>
+</b> | 
+		
+		
+		Verify that Password field is not highlighted in red</div>
+</div>
+</div>
+<div id="test-case" class="box">
+<div class="header1">
+<span href="#" class="collapse">[-]</span>Test Case: Validate Password Signup requirement<span class="status"> | <span class="failed">Failed</span>
+</span>
+</div>
+<div id="test-step" class="box">
+<div class="header2">
+<span href="#" class="collapse" style="margin-left:7px">[-]</span> Step: Validate that if password is less than 6 characters, error should show upon sign up<span class="status"> | <span class="failed">Failed</span>
+</span>
+</div>
+<div class="line">
+<span width="100px">01/14/2019 12:06 AM</span> | <b>
+<span class="failed">Failed</span>
+</b> | 
+		
+		
+		[Password TextBox] Type "a"</div>
+<div class="line">
+<span width="100px">01/14/2019 12:06 AM</span> | <b>
+<span class="passed">Passed</span>
+</b> | 
+		
+		
+		[Submit Button] Click element</div>
+<div class="line">
+<span width="100px">01/14/2019 12:06 AM</span> | <b>
+<span class="passed">Passed</span>
+</b> | 
+		
+		
+		Verify that if password is less than 6 characters, error should show upon sign up</div>
+</div>
+<div id="test-step" class="box">
+<div class="header2">
+<span href="#" class="collapse" style="margin-left:7px">[-]</span> Step: Validate that if password contains only letters, error should show upon sign up<span class="status"> | <span class="passed">Passed</span>
+</span>
+</div>
+<div class="line">
+<span width="100px">01/14/2019 12:06 AM</span> | <b>
+<span class="passed">Passed</span>
+</b> | 
+		
+		
+		[Password TextBox] Type "aaaaaaaaaaaaaaa"</div>
+<div class="line">
+<span width="100px">01/14/2019 12:06 AM</span> | <b>
+<span class="passed">Passed</span>
+</b> | 
+		
+		
+		[Submit Button] Click element</div>
+<div class="line">
+<span width="100px">01/14/2019 12:06 AM</span> | <b>
+<span class="passed">Passed</span>
+</b> | 
+		
+		
+		Verify that if password contains only letters, error should show upon sign up</div>
+</div>
+<div id="test-step" class="box">
+<div class="header2">
+<span href="#" class="collapse" style="margin-left:7px">[-]</span> Step: Validate that if password contains only numbers, error should show upon sign up<span class="status"> | <span class="passed">Passed</span>
+</span>
+</div>
+<div class="line">
+<span width="100px">01/14/2019 12:06 AM</span> | <b>
+<span class="passed">Passed</span>
+</b> | 
+		
+		
+		[Password TextBox] Type "111111111111"</div>
+<div class="line">
+<span width="100px">01/14/2019 12:06 AM</span> | <b>
+<span class="passed">Passed</span>
+</b> | 
+		
+		
+		[Submit Button] Click element</div>
+<div class="line">
+<span width="100px">01/14/2019 12:06 AM</span> | <b>
+<span class="passed">Passed</span>
+</b> | 
+		
+		
+		Verify that if password contains only numbers, error should show upon sign up</div>
+</div>
+</div>
+<div id="test-case" class="box">
+<div class="header1">
+<span href="#" class="collapse">[-]</span>Test Case: Validate Email/Mobile Number Signup Requirement<span class="status"> | <span class="passed">Passed</span>
+</span>
+</div>
+<div id="test-step" class="box">
+<div class="header2">
+<span href="#" class="collapse" style="margin-left:7px">[-]</span> Step: Validate that if password is less than 6 characters, error should show upon sign up<span class="status"> | <span class="passed">Passed</span>
+</span>
+</div>
+<div class="line">
+<span width="100px">01/14/2019 12:06 AM</span> | <b>
+<span class="passed">Passed</span>
+</b> | 
+		
+		
+		Verify that if password contains only numbers, error should show upon sign up</div>
+</div>
+</div>
+<div id="test-case" class="box">
+<div class="header1">
+<span href="#" class="collapse">[-]</span>Test Case: FirstName and LastName Signup Requirement<span class="status"> | <span class="passed">Passed</span>
+</span>
+</div>
+<div id="test-step" class="box">
+<div class="header2">
+<span href="#" class="collapse" style="margin-left:7px">[-]</span> Step: Validate that if password is less than 6 characters, error should show upon sign up<span class="status"> | <span class="passed">Passed</span>
+</span>
+</div>
+<div class="line">
+<span width="100px">01/14/2019 12:06 AM</span> | <b>
+<span class="passed">Passed</span>
+</b> | 
+		
+		
+		Verify that if password contains only numbers, error should show upon sign up</div>
 </div>
 </div>
 </div>

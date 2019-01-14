@@ -1,14 +1,88 @@
 <?xml version="1.0" encoding="UTF-8"?><root>
-    <test-scenario browser="chrome" endTime="N/A" environment="Test Environment" name="Default test" startTime="01/12/2019 01:01 AM" status="Passed">
-        <test-case name="Default">
+    <test-scenario browser="chrome" endTime="N/A" environment="Test Environment" name="Default test" startTime="01/14/2019 12:06 AM" status="Passed">
+        <test-case name="Validate behavior when fields are blank during sign up">
             <summary>
-                <info desc="01/12/2019 01:01 AM" name="Time Started"/>
-                <info desc="01/12/2019 01:01 AM" name="Time Ended"/>
-                <info desc="0.26 mins" name="Time Elapsed"/>
+                <info desc="01/14/2019 12:06 AM" name="Time Started"/>
+                <info desc="N/A" name="Time Ended"/>
+                <info desc="N/A" name="Time Elapsed"/>
             </summary>
-            <test-step>
-                <report desc="Navigate to https://facebook.com" status="Passed" timestamp="01/12/2019 01:01 AM"/>
-                <report desc="[Email TextBox] Type &quot;auogie@gmail.com&quot;" status="Passed" timestamp="01/12/2019 01:01 AM"/>
+            <test-step name="Validate that all the Fields that are blank are highlighted in red">
+                <report desc="Navigate to https://facebook.com" status="Passed" timestamp="01/14/2019 12:06 AM"/>
+                <report desc="[Submit Button] Click element" status="Passed" timestamp="01/14/2019 12:06 AM"/>
+                <report desc="Verify that FirstName is focused and is showing a tooltip with Message: &quot;What's your name?&quot;" status="Passed" timestamp="01/14/2019 12:06 AM"/>
+                <report desc="Verify that LastName field is highlighted in red" status="Passed" timestamp="01/14/2019 12:06 AM"/>
+                <report desc="Verify that Mobile/Email field is highlighted in red" status="Passed" timestamp="01/14/2019 12:06 AM"/>
+                <report desc="Verify that Password field is highlighted in red" status="Passed" timestamp="01/14/2019 12:06 AM"/>
+                <report desc="Verify that Gender Radio Buttons are highlighted in red" status="Passed" timestamp="01/14/2019 12:06 AM"/>
+            </test-step>
+            <test-step name="Validate that if a textbox field is focused, that field will display a tooltip">
+                <report desc="[LastName TextBox] Click element" status="Passed" timestamp="01/14/2019 12:06 AM"/>
+                <report desc="Verify that LastName is focused and is showing a tooltip with Message: &quot;What's your name?&quot;" status="Passed" timestamp="01/14/2019 12:06 AM"/>
+                <report desc="Verify that FirstName field is highlighted in red" status="Passed" timestamp="01/14/2019 12:06 AM"/>
+                <report desc="[Mobile or Email TextBox] Click element" status="Passed" timestamp="01/14/2019 12:06 AM"/>
+                <report desc="Verify that Mobile/Email is focused and is showing a tooltip with Message: &quot;You’ll use this when you log in and if you ever need to reset your password.&quot;" status="Passed" timestamp="01/14/2019 12:06 AM"/>
+                <report desc="Verify that LastName field is highlighted in red" status="Passed" timestamp="01/14/2019 12:06 AM"/>
+            </test-step>
+            <test-step name="Validate that if a Gender is selected, the red highlight disappears">
+                <report desc="[Male Radio Button] Click element" status="Passed" timestamp="01/14/2019 12:06 AM"/>
+                <report desc="Verify that Gender Radio Buttons are not highlighted in red after selecting a gender" status="Passed" timestamp="01/14/2019 12:06 AM"/>
+            </test-step>
+            <test-step name="Validate that if all the text fields are populated the red highlight disappears">
+                <report desc="[FirstName TextBox] Type &quot;Tester&quot;" status="Passed" timestamp="01/14/2019 12:06 AM"/>
+                <report desc="[LastName TextBox] Type &quot;Tester&quot;" status="Passed" timestamp="01/14/2019 12:06 AM"/>
+                <report desc="[Mobile or Email TextBox] Type &quot;auogie323@gmail.com&quot;" status="Passed" timestamp="01/14/2019 12:06 AM"/>
+                <report desc="[Mobile or Email Confirm TextBox] Type &quot;auogie323@gmail.com&quot;" status="Passed" timestamp="01/14/2019 12:06 AM"/>
+                <report desc="[Birthday Day] Select Text &quot;2&quot;" status="Passed" timestamp="01/14/2019 12:06 AM"/>
+                <report desc="[Birthday Month] Select Text &quot;Aug&quot;" status="Passed" timestamp="01/14/2019 12:06 AM"/>
+                <report desc="[Birthday Year] Select Text &quot;1986&quot;" status="Passed" timestamp="01/14/2019 12:06 AM"/>
+                <report desc="[Password TextBox] Type &quot;a&quot;" status="Passed" timestamp="01/14/2019 12:06 AM"/>
+                <report desc="[Male Radio Button] Click element" status="Passed" timestamp="01/14/2019 12:06 AM"/>
+                <report desc="Verify that FirstName field is not highlighted in red" status="Passed" timestamp="01/14/2019 12:06 AM"/>
+                <report desc="Verify that LastName field is not highlighted in red" status="Passed" timestamp="01/14/2019 12:06 AM"/>
+                <report desc="Verify that Mobile/Email field is not highlighted in red" status="Passed" timestamp="01/14/2019 12:06 AM"/>
+                <report desc="Verify that Password field is not highlighted in red" status="Passed" timestamp="01/14/2019 12:06 AM"/>
+            </test-step>
+        </test-case>
+        <test-case name="Validate Password Signup requirement">
+            <summary>
+                <info desc="01/14/2019 12:06 AM" name="Time Started"/>
+                <info desc="N/A" name="Time Ended"/>
+                <info desc="N/A" name="Time Elapsed"/>
+            </summary>
+            <test-step name="Validate that if password is less than 6 characters, error should show upon sign up">
+                <report desc="[Password TextBox] Type &quot;a&quot;" status="Failed" timestamp="01/14/2019 12:06 AM"/>
+                <report desc="[Submit Button] Click element" status="Passed" timestamp="01/14/2019 12:06 AM"/>
+                <report desc="Verify that if password is less than 6 characters, error should show upon sign up" status="Passed" timestamp="01/14/2019 12:06 AM"/>
+            </test-step>
+            <test-step name="Validate that if password contains only letters, error should show upon sign up">
+                <report desc="[Password TextBox] Type &quot;aaaaaaaaaaaaaaa&quot;" status="Passed" timestamp="01/14/2019 12:06 AM"/>
+                <report desc="[Submit Button] Click element" status="Passed" timestamp="01/14/2019 12:06 AM"/>
+                <report desc="Verify that if password contains only letters, error should show upon sign up" status="Passed" timestamp="01/14/2019 12:06 AM"/>
+            </test-step>
+            <test-step name="Validate that if password contains only numbers, error should show upon sign up">
+                <report desc="[Password TextBox] Type &quot;111111111111&quot;" status="Passed" timestamp="01/14/2019 12:06 AM"/>
+                <report desc="[Submit Button] Click element" status="Passed" timestamp="01/14/2019 12:06 AM"/>
+                <report desc="Verify that if password contains only numbers, error should show upon sign up" status="Passed" timestamp="01/14/2019 12:06 AM"/>
+            </test-step>
+        </test-case>
+        <test-case name="Validate Email/Mobile Number Signup Requirement">
+            <summary>
+                <info desc="01/14/2019 12:06 AM" name="Time Started"/>
+                <info desc="N/A" name="Time Ended"/>
+                <info desc="N/A" name="Time Elapsed"/>
+            </summary>
+            <test-step name="Validate that if password is less than 6 characters, error should show upon sign up">
+                <report desc="Verify that if password contains only numbers, error should show upon sign up" status="Passed" timestamp="01/14/2019 12:06 AM"/>
+            </test-step>
+        </test-case>
+        <test-case name="FirstName and LastName Signup Requirement">
+            <summary>
+                <info desc="01/14/2019 12:06 AM" name="Time Started"/>
+                <info desc="01/14/2019 12:07 AM" name="Time Ended"/>
+                <info desc="0.27 mins" name="Time Elapsed"/>
+            </summary>
+            <test-step name="Validate that if password is less than 6 characters, error should show upon sign up">
+                <report desc="Verify that if password contains only numbers, error should show upon sign up" status="Passed" timestamp="01/14/2019 12:06 AM"/>
             </test-step>
         </test-case>
     </test-scenario>

@@ -25,7 +25,6 @@ import auto.framework.drivers.ChromeBrowserDriver;
 import auto.framework.drivers.DriverSettings;
 import auto.framework.drivers.FirefoxBrowserDebugDriver;
 import auto.framework.drivers.FirefoxBrowserDriver;
-import auto.framework.drivers.IEBrowserDriver;
 
 
 public class WebManager {
@@ -120,9 +119,6 @@ public class WebManager {
 		    		case "chrome":
 		    			driver = ChromeBrowserDriver.start();
 		    			break;
-		    		case "ie":		    		
-		    			driver = IEBrowserDriver.start();
-		    			break;
 		    		case "firefox":
 		    			driver = debugMode? FirefoxBrowserDebugDriver.start() : FirefoxBrowserDriver.start();
 		    			break;		    			
@@ -135,9 +131,7 @@ public class WebManager {
     		throw error;
     	}
 
-    	
-    	//System.err.println("Successfully Created Driver");
-    	Timeouts timeouts = driver.manage().timeouts();
+     	Timeouts timeouts = driver.manage().timeouts();
     	Window window = driver.manage().window();
     	try {
 	    	timeouts.pageLoadTimeout(Preferences.pageLoadTimeOut(), TimeUnit.SECONDS);

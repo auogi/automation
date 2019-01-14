@@ -2,15 +2,15 @@
 <testng-results skipped="0" failed="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="19897" started-at="2019-01-12T08:01:03Z" finished-at="2019-01-12T08:01:23Z">
+  <suite name="Default suite" duration-ms="19567" started-at="2019-01-14T07:06:41Z" finished-at="2019-01-14T07:07:00Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="19897" started-at="2019-01-12T08:01:03Z" finished-at="2019-01-12T08:01:23Z">
+    <test name="Default test" duration-ms="19567" started-at="2019-01-14T07:06:41Z" finished-at="2019-01-14T07:07:00Z">
       <class name="testsuite.fb.divvy">
-        <test-method status="PASS" signature="test()[pri:0, instance:testsuite.fb.divvy@46d56d67]" name="test" duration-ms="15473" started-at="2019-01-12T01:01:07Z" finished-at="2019-01-12T01:01:22Z">
+        <test-method status="PASS" signature="TC1_NegativeTest()[pri:0, instance:testsuite.fb.divvy@46d56d67]" name="TC1_NegativeTest" duration-ms="16433" started-at="2019-01-14T00:06:43Z" finished-at="2019-01-14T00:06:59Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- test -->
+        </test-method> <!-- TC1_NegativeTest -->
       </class> <!-- testsuite.fb.divvy -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
