@@ -6,14 +6,11 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
-import java.io.StringWriter;
 import java.util.concurrent.TimeUnit;
 
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.Capabilities;
 import org.openqa.selenium.Keys;
-import org.openqa.selenium.Proxy;
-import org.openqa.selenium.Proxy.ProxyType;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebDriver.Timeouts;
 import org.openqa.selenium.WebDriver.Window;
@@ -21,9 +18,8 @@ import org.openqa.selenium.WebDriverException;
 import org.openqa.selenium.htmlunit.HtmlUnitDriver;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.remote.SessionId;
+
 import auto.framework.drivers.ChromeBrowserDriver;
-import auto.framework.drivers.DriverSettings;
-import auto.framework.drivers.FirefoxBrowserDebugDriver;
 import auto.framework.drivers.FirefoxBrowserDriver;
 
 
@@ -113,14 +109,12 @@ public class WebManager {
     	WebDriver driver = null;
     	
     	try {    
-    			DriverSettings.BrowserInfo browserInfo = new DriverSettings.BrowserInfo(browserName);
-    			debugMode = browserInfo.debugMode;
-    			switch(browserInfo.browserType.trim().toLowerCase()){
+    			switch(browserName){
 		    		case "chrome":
 		    			driver = ChromeBrowserDriver.start();
 		    			break;
 		    		case "firefox":
-		    			driver = debugMode? FirefoxBrowserDebugDriver.start() : FirefoxBrowserDriver.start();
+		    			driver = FirefoxBrowserDriver.start();
 		    			break;		    			
 		    		default:
 		    			driver = FirefoxBrowserDriver.start();

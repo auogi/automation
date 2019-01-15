@@ -2,16 +2,13 @@ package auto.framework.report.listeners;
 
 import java.io.IOException;
 import java.util.Map;
+
 import org.testng.IInvokedMethod;
 import org.testng.IInvokedMethodListener;
 import org.testng.ITestResult;
 import org.testng.Reporter;
-
-import auto.framework.drivers.DriverSetting;
 import auto.framework.managers.TestManager;
 import auto.framework.managers.WebManager;
-import auto.framework.report.reporter.ReportLog;
-import auto.framework.webelement.WebControl;
 
 public class MethodListener implements IInvokedMethodListener {
 	
@@ -46,9 +43,6 @@ public class MethodListener implements IInvokedMethodListener {
     		 return;
     	 }else if(testResult.getStatus()==ITestResult.FAILURE){
     		 failedCount++;
-    		 if(!DriverSetting.BROWSER.getValue().equals("headless")){
-	    		 WebControl.takeScreenshot();    			 
-    		 }
     	 } else{
     		 passCount++;
     	 }

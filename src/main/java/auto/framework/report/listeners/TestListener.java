@@ -1,8 +1,6 @@
 package auto.framework.report.listeners;
 
 import java.text.DateFormat;
-import org.testng.asserts.Assertion;
-import org.testng.asserts.SoftAssert;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -14,12 +12,10 @@ import org.testng.ITestResult;
 import org.testng.Reporter;
 import org.testng.SkipException;
 
-import auto.framework.drivers.DriverSetting;
 import auto.framework.managers.TestManager;
 import auto.framework.report.reporter.ReportLog;
 import auto.framework.report.reporter.ReportLogConsolidator;
 import auto.framework.report.reporter.ReportLogInstance;
-import auto.framework.report.reporter.ReportLog.Status;
 
 public class TestListener  implements ITestListener {
 	
@@ -90,42 +86,20 @@ public class TestListener  implements ITestListener {
 			Boolean runAsMethod = defaultTest &&  context.getCurrentXmlTest().toXml("").contains("<methods>");		  			
 			String browserName = TestManager.Preferences.getPreference("browser");
 			
-			if(Boolean.valueOf(TestManager.Preferences.getPreference("turnOffSelenium"))){									
+	/*		if(Boolean.valueOf(TestManager.Preferences.getPreference("turnOffSelenium"))){									
 				browserName = "";
 			} else {					
 				if(defaultTest){														
-					//browserName = runAsMethod ? "firefox -debug" : runAs();//"firefox -debug";
 					browserName = runAsMethod ? browserName : runAs();//"firefox -debug";
 					System.setProperty("browser", browserName);
 				} 
 			}
 		
-			ReportLogInstance reporter = new ReportLogInstance();
+	*/		ReportLogInstance reporter = new ReportLogInstance();
 			reporter.setTestName(context.getCurrentXmlTest().getName());
 			ReportLogInstance.setInstance(reporter);
 			
-			if(browserName.equalsIgnoreCase("")){
-				reporter.setBrowser("Not Applicable");
-			}else if (browserName.equalsIgnoreCase("None")){
-						reporter.setBrowser("Not Applicable");						
-			}
-			else if (browserName.equalsIgnoreCase("browserStack")){
-				reporter.setBrowser("Browser Stack["+DriverSetting.BS_BROWSER.getValue() + " " +DriverSetting.BS_BROWSER_VERSION.getValue()+"]");
-				
-			} else{
-				reporter.setBrowser(browserName);
-			}
-			
-			if(TestManager.Preferences.getPreference("envConfig").contains("test")){
-				reporter.setEnvironment("Test Environment");	
-			}else if(TestManager.Preferences.getPreference("envConfig").contains("sta")){
-				reporter.setEnvironment("Staging Environment");
-			}else if(TestManager.Preferences.getPreference("envConfig").contains("prod")){
-				reporter.setEnvironment("Production Environment");
-			}
-			else{
-				reporter.setEnvironment(TestManager.Preferences.getPreference("envConfig"));
-			}			
+			reporter.setBrowser(browserName);
 			reporter.setStartTime(timestamp.format(new Date()));
 			reporter.setEndTime("N/A");			
 			reportConsolidator.addReport(reporter);

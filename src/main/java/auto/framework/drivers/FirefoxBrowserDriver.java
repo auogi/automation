@@ -21,18 +21,24 @@ import auto.framework.managers.TestManager;
 public class FirefoxBrowserDriver{
 	
 	public static WebDriver start(){
-				
+		
+		String firefoxDriverPath="";
+    	try {
+			firefoxDriverPath = JarFileToLocal.copyTmp("/webdriver/geckodriver.exe").getCanonicalPath();
+			System.setProperty("webdriver.gecko.driver",firefoxDriverPath);
+			} catch (IOException e) {}
+
+    	return new FirefoxDriver(); 
+		
+		/*		
 		ProfilesIni allProfiles = new ProfilesIni();
 		FirefoxProfile myprofile = new FirefoxProfile();
-		//myprofile.setPreference(FirefoxProfile.PORT_PREFERENCE, 41176);
 		FirefoxBinary binary = new FirefoxBinary();		
-		String userAgent = TestManager.Preferences.getPreference("UserAgent");
 		String firefoxVersion = TestManager.Preferences.getPreference("webdriver.firefox.version");
 		String firefoxDriverPath="";
 		File ffPath = null;
 		System.setProperty("webdriver.firefox.useExisting", "true");
     	System.setProperty("webdriver.reap_profile", "false");		
-    	//System.setProperty("webdriver.firefox.port", "41176");    	
     	FirefoxOptions options = new FirefoxOptions();
     	
     	
@@ -51,16 +57,11 @@ public class FirefoxBrowserDriver{
 			}
 		}
     	
-    	try {
-			firefoxDriverPath = JarFileToLocal.copyTmp("/webdriver/geckodriver.exe").getCanonicalPath();
-			System.setProperty("webdriver.gecko.driver",firefoxDriverPath);
-			} catch (IOException e) {}
 										
 		options.setProfile(myprofile);	
 		options.setBinary(binary);	   											    	    	       	  	
     	FirefoxDriver driver = new FirefoxDriver(options);    	    	
     	driver.setLogLevel(Level.OFF);    	    	    
-    	driver.getCommandExecutor();
-		return driver;
+    	driver.getCommandExecutor();*/
 	}
 }

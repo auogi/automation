@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Test Suite" parallel="tests" thread-count="2">		
+	<test name="UserGroup1: Fails a SignUp">			
+		<classes>
+			<class name="testsuite.fb.PerfTest">
+				 <methods>							
+                    <include name="TC1_NegativeTest"><parameter name="execute" value="true"></parameter></include>                                    
+	              </methods>
+              </class>
+		</classes>				
+	</test>	
+	<test name="UserGroup1: Successful SignUp">			
+		<classes>
+			<class name="testsuite.fb.PerfTest">
+				 <methods>							
+                    <include name="TC1_NegativeTest"><parameter name="execute" value="true"></parameter></include>                                    
+	              </methods>
+              </class>
+		</classes>				
+	</test>	
+</suite>

@@ -8,7 +8,7 @@ import auto.framework.report.reporter.ReportLog;
 import auto.framework.webelement.WebControl;
 import component.fb.SignUpPage;
 
-public class divvy extends TestInit {
+public class SampleTest extends TestInit {
 
 	@Test
 	public void TC1_NegativeTest(){
@@ -129,7 +129,6 @@ public class divvy extends TestInit {
 						+ " It should be longer than 6 characters, unique to you, and difficult for others to guess.")
 						, "Verify that if password contains only numbers, error should show upon sign up");
 			
-				ReportLog.assertFailed("Sample of a Failure");
-
+			ReportLog.assertAll();
 	}
 }
