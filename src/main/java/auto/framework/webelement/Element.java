@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.SearchContext;
 import org.openqa.selenium.StaleElementReferenceException;
@@ -52,11 +53,12 @@ public class Element {
 	
 	public WebElement toWebElement(){ 
 		WebDriverWait wait = new WebDriverWait(WebManager.getDriver(), 0);
+		WebManager.getDriver().manage().timeouts().implicitlyWait(0,TimeUnit.MICROSECONDS);
 		if(this.element!=null) {
 			List<WebElement> webElements = null;
 			try {
-				webElements = wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(this.element.by));
-			}catch(TimeoutException e) {
+				webElements = WebManager.getDriver().findElements(this.element.by);
+			}catch(TimeoutException|NullPointerException e) {
 				
 			}
 			
@@ -65,7 +67,7 @@ public class Element {
 			}else {
 				WebElement foundElement = null;
 				
-				WebManager.getDriver().manage().timeouts().implicitlyWait(0,TimeUnit.MICROSECONDS);
+
 				for(WebElement element : webElements) {
 					try {
 						foundElement = element.findElement(this.by);
@@ -97,119 +99,82 @@ public class Element {
 	
 	
 	public Boolean click(){
-		Boolean prereq = isExisting();
 		Boolean success = false;
 
-		if(prereq) {
-			try{				
-				toWebElement().click();
-				success = true;
-			} catch(StaleElementReferenceException|Error e){
-				ReportLog.failed("[" + name + "] Click element");				
-				throw e;
-			} catch(Exception e){
-				ReportLog.failed("[" + name + "] Click element");	
-				throw e;
-			}
+		try{				
+			toWebElement().click();
+			success = true;
+		} catch(StaleElementReferenceException e){
+			ReportLog.failed("[" + name + "] Click element");	
+			WebControl.takeScreenshot();
+		} catch(Exception e){
+			ReportLog.failed("[" + name + "] Click element");
+			WebControl.takeScreenshot();
 		}
 						
-			ReportLog.passed("[" + name + "] Click element");
+		ReportLog.passed("[" + name + "] Click element");
 		return success;
 	}
 	
 	public Boolean selectByVisibleText(String string) {
-		Boolean prereq = isExisting(); 
 		Boolean success = false;
-		if(prereq) { 
+		try{
 			Select webElement = new Select(toWebElement());
 			webElement.selectByVisibleText(string);
 			success = true;
+		} catch(StaleElementReferenceException e){
+			ReportLog.failed("[" + name + "] Select element");
+			WebControl.takeScreenshot(this.toWebElement());
+		} catch(Exception e){
+			ReportLog.failed("[" + name + "] Select element");
+			WebControl.takeScreenshot();
 		}
+			
 		ReportLog.verifyTrue(success, "[" + name + "] Select Text \"" + string + "\"");
-		return success;
-	}
-
-	public Boolean selectByIndex(Integer index) {
-		Boolean prereq = isExisting(); 
-		Boolean success = false;
-		if(prereq) { 
-			Select webElement = new Select(toWebElement());
-			webElement.selectByIndex(index);
-			success = true;
-		}
-		ReportLog.verifyTrue(success, "[" + name + "] Select Index \"" + index + "\"");
-		return success;
-	}
-	
-	public Boolean selectByValue(String value) {
-		Boolean prereq = isExisting(); 
-		Boolean success = false;
-		if(prereq) { 
-			Select webElement = new Select(toWebElement());
-			webElement.selectByValue(value);
-			success = true;
-		}
-		ReportLog.verifyTrue(success, "[" + name + "] Select Value \"" + value + "\"");
 		return success;
 	}
 	
 	public Boolean sendKeys(String string){
-		Boolean prereq = isDisplayed(); 
 		Boolean success = false;
-		if(prereq) { 
+		try{				
 			WebElement webElement = toWebElement();
 			webElement.clear();
 			webElement.sendKeys(string);
 			success = true;
+		} catch(StaleElementReferenceException|NullPointerException e){
+			ReportLog.failed("[" + name + "] Type element");				
+			WebControl.takeScreenshot();
+		} catch(Exception e){
+			ReportLog.failed("[" + name + "] Type element");	
+			WebControl.takeScreenshot();
 		}
+						
+
+		
 		ReportLog.verifyTrue(success, "[" + name + "] Type \"" + string + "\"");
 		return success;
+	}
+	
+		
+	public String getText() {
+		return toWebElement().getText();
 	}
 		
 	public String getAttribute(String name) {
 		return toWebElement().getAttribute(name);
-	}
-	
-	public Boolean type(String string){				
-		Boolean prereq = isExisting(); 
-		Boolean success = false;
-		if(prereq) { 
-			WebElement webElement = toWebElement();
-			JavascriptExecutor myExecutor = ((JavascriptExecutor) WebManager.getDriver());
-			myExecutor.executeScript("arguments[0].value='"+string+"'", webElement);
-			success = true;
-		}
-		ReportLog.verifyTrue(success, "[" + name + "] Type \"" + string + "\"");
-		return success;
-	}
-	
-	public String getText() {
-		Boolean prereq = isDisplayed();
-		if(prereq){
-			try {
-				return toWebElement().getText();
-			} catch(Error error) {
-				return "";
-			}		
-		}		
-		return "";
-	}
-	
-	public Boolean isExisting(){
-		List<WebElement> elements = WebManager.getDriver().findElements(by);
-		return !elements.isEmpty();
-	}
+	}	
 	
 	public Boolean isDisplayed() {
+		Boolean iDisplayed = false;
+		
 		try {
-			Boolean iDisplayed = toWebElement().isDisplayed(); 				
+			iDisplayed = toWebElement().isDisplayed(); 				
+		} catch(Exception e){
+			WebControl.takeScreenshot();
 			return iDisplayed;
-		} catch(NoSuchElementException|StaleElementReferenceException|TimeoutException|NullPointerException e){
-			return false;
-		} catch(WebDriverException e){
-			if(e.getMessage().contains("Error determining if element is displayed")) return false;
-			throw e;
-		}
+		}		
+		return iDisplayed;
+
 	}
 
 }
