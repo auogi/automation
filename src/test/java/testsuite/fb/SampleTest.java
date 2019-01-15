@@ -43,8 +43,8 @@ public class SampleTest extends TestInit {
 			ReportLog.setTestStep("Validate that if all the text fields are populated the red highlight disappears");
 				SignUpPage.ErrorField.FirstNameTextBox.sendKeys("Tester");
 				SignUpPage.ErrorField.LastNameTextBox.sendKeys("Tester");
-				SignUpPage.ErrorField.MobEmailTextBox.sendKeys("auogie323@gmail.com");
-				SignUpPage.Field.MobEmailRepeatTextBox.sendKeys("auogie323@gmail.com");
+				SignUpPage.ErrorField.MobEmailTextBox.sendKeys("Tester3241@gmail.com");
+				SignUpPage.Field.MobEmailRepeatTextBox.sendKeys("Tester3241@gmail.com");
 				SignUpPage.BirthDayField.Day.selectByVisibleText("2");
 				SignUpPage.BirthDayField.Month.selectByVisibleText("Aug");
 				SignUpPage.BirthDayField.Year.selectByVisibleText("1986");

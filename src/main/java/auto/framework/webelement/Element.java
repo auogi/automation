@@ -72,7 +72,7 @@ public class Element {
 					try {
 						foundElement = element.findElement(this.by);
 						break;
-					}catch(NoSuchElementException|NullPointerException e) {
+					}catch(TimeoutException|NoSuchElementException|NullPointerException e) {
 						
 					}
 				}
@@ -83,7 +83,14 @@ public class Element {
 				return foundElement;
 			}
 		}else {
-			return wait.until(ExpectedConditions.visibilityOfElementLocated(this.by));		
+			WebElement foundElement = null;
+			
+			try {
+				foundElement = WebManager.getDriver().findElement(this.by);
+			}catch(TimeoutException|NoSuchElementException|NullPointerException e) {
+				
+			}
+			return foundElement;		
 		}
 	}
 	
@@ -170,7 +177,6 @@ public class Element {
 		try {
 			iDisplayed = toWebElement().isDisplayed(); 				
 		} catch(Exception e){
-			WebControl.takeScreenshot();
 			return iDisplayed;
 		}		
 		return iDisplayed;

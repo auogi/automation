@@ -27,8 +27,12 @@ public class FirefoxBrowserDriver{
 			firefoxDriverPath = JarFileToLocal.copyTmp("/webdriver/geckodriver.exe").getCanonicalPath();
 			System.setProperty("webdriver.gecko.driver",firefoxDriverPath);
 			} catch (IOException e) {}
+    	
+    	DesiredCapabilities capabilities = DesiredCapabilities.firefox();
+        capabilities.setCapability("marionette", true);
+    
 
-    	return new FirefoxDriver(); 
+    	return new FirefoxDriver(capabilities); 
 		
 		/*		
 		ProfilesIni allProfiles = new ProfilesIni();
