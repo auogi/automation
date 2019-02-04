@@ -1,8 +1,6 @@
 package auto.framework.report.listeners;
 
-import java.io.IOException;
 import java.util.Map;
-
 import org.testng.IInvokedMethod;
 import org.testng.IInvokedMethodListener;
 import org.testng.ITestResult;
@@ -23,12 +21,7 @@ public class MethodListener implements IInvokedMethodListener {
         }                   
 	    
 		System.err.println( "Test Run Mode" );		
-		try {
-			WebManager.startDriver(TestManager.Preferences.getPreference("browser"));
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		WebManager.startDriver(TestManager.Preferences.getPreference("browser"));
     }
 
 
@@ -46,11 +39,8 @@ public class MethodListener implements IInvokedMethodListener {
     	 } else{
     		 passCount++;
     	 }
-    		 
-    	 
-    	 try {	    		    		 
-    		 WebManager.endDriver();			    		 
-    	 } catch (InterruptedException e) {e.printStackTrace();}	    	
+    		     	 
+    	 WebManager.endDriver();	    	
     }
    
     

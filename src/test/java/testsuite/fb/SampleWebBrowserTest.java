@@ -1,29 +1,33 @@
 package testsuite.fb;
 
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.Test;
 
+import auto.framework.managers.WebManager;
 import auto.framework.report.listeners.TestInit;
 import auto.framework.report.reporter.ReportLog;
-import auto.framework.webelement.WebControl;
+import auto.framework.web.WebControl;
 import component.fb.SignUpPage;
 
-public class SampleTest extends TestInit {
+public class SampleWebBrowserTest extends TestInit {
 
+	
 	@Test
 	public void TC1_NegativeTest(){
-		
+
 		ReportLog.setTestCase("Validate Behavior when fields are blank during sign up");
 			ReportLog.setTestStep("Validate that all the Fields that are blank are highlighted in red");
 				WebControl.open("https://facebook.com");
 				SignUpPage.SubmitButton.click();
 				ReportLog.verifyTrue(SignUpPage.ToolTip.getText().equals("What’s your name?"), 
 						"Verify that FirstName is focused and is showing a tooltip with Message: \"What's your name?\"");
-				ReportLog.verifyTrue(SignUpPage.ErrorField.LastNameTextBox.isDisplayed(), "Verify that LastName field is highlighted in red");
-				ReportLog.verifyTrue(SignUpPage.ErrorField.MobEmailTextBox.isDisplayed(), "Verify that Mobile/Email field is highlighted in red");
-				ReportLog.verifyTrue(SignUpPage.ErrorField.PasswordTextBox.isDisplayed(), "Verify that Password field is highlighted in red");
-				ReportLog.verifyTrue(SignUpPage.Field.PasswordTextBox.isDisplayed(), "Verify that Password field is not highlighted in red");
-				ReportLog.verifyTrue(SignUpPage.ErrorGenderRadioButton.isDisplayed(), "Verify that Gender Radio Buttons are highlighted in red");
+				ReportLog.verifyTrue(SignUpPage.ErrorField.LastNameTextBox.waitForDisplay(), "Verify that LastName field is highlighted in red");
+				ReportLog.verifyTrue(SignUpPage.ErrorField.MobEmailTextBox.waitForDisplay(), "Verify that Mobile/Email field is highlighted in red");
+				ReportLog.verifyTrue(SignUpPage.ErrorField.PasswordTextBox.waitForDisplay(), "Verify that Password field is highlighted in red");
+				ReportLog.verifyTrue(SignUpPage.Field.PasswordTextBox.waitForDisplay(), "Verify that Password field is not highlighted in red");
+				ReportLog.verifyTrue(SignUpPage.ErrorGenderRadioButton.waitForDisplay(), "Verify that Gender Radio Buttons are highlighted in red");
 			
 				
 			ReportLog.setTestStep("Validate that if a textbox field is focused, that field will display a tooltip");

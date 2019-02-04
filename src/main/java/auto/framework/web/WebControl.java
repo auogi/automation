@@ -1,4 +1,4 @@
-package auto.framework.webelement;
+package auto.framework.web;
 
 import java.awt.Rectangle;
 import java.awt.image.BufferedImage;
@@ -8,15 +8,13 @@ import java.io.File;
 import java.io.IOException;
 import java.io.UncheckedIOException;
 import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Base64;
 import java.util.Date;
 
 import javax.imageio.ImageIO;
-
-import org.apache.commons.io.FileUtils;
-import org.apache.commons.io.FilenameUtils;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.Point;
@@ -38,7 +36,7 @@ public class WebControl {
 	
 	private static void takeScreenshot64(){
 		
-		RemoteWebDriver driver = WebManager.getRemoteDriver();		       
+		WebDriver driver = WebManager.getDriver();		       
         if(!(driver instanceof TakesScreenshot)) {
         	driver = (RemoteWebDriver) new Augmenter().augment(driver);
         }
@@ -59,20 +57,20 @@ public class WebControl {
 			return;
 		}
 		
-		RemoteWebDriver driver = WebManager.getRemoteDriver();
+		WebDriver driver = WebManager.getDriver();
 	
 	    if(!(driver instanceof TakesScreenshot)) {
         	driver = (RemoteWebDriver) new Augmenter().augment(driver);
         }
         try {
-        	if (!(Boolean) driver.getCapabilities().getCapability(CapabilityType.TAKES_SCREENSHOT)) {
+        	if (!(Boolean) ((RemoteWebDriver) driver).getCapabilities().getCapability(CapabilityType.TAKES_SCREENSHOT)) {
         		return;
         	}
             	
         	File screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
         	DateFormat dateFormatTimeStamp = new SimpleDateFormat("MM-dd-yyyy HH-mm-ss ");
         	String timestamp = dateFormatTimeStamp.format(new Date());
-        	String filename = timestamp+ FilenameUtils.getName(screenshot.getCanonicalPath());
+        	String filename = timestamp+ screenshot.getName();
         	File tmpDir = new File("./src/test/resources/screenshots");
 			File sessionDir = new File(tmpDir, ((RemoteWebDriver) driver).getSessionId().toString() );
 			if(sessionDir.exists() || sessionDir.mkdir()){
@@ -80,8 +78,7 @@ public class WebControl {
 			}
 			File tmpFile = new File(tmpDir,filename);
         	
-        	FileUtils.copyFile(screenshot, tmpFile);
-        	
+        	Files.copy(screenshot.toPath(), tmpFile.toPath());
         	ReportLog.attachFile("screenshot", tmpFile.toURI().toURL().toString());
 		} catch (Exception e) {
 			// TODO Auto-generated catch block

@@ -107,14 +107,7 @@ public class TestListener  implements ITestListener {
 
 	@Override
 	public void onFinish(ITestContext context) {
-		//ReportLogInstance.getInstance().assertAll();		
 		reportConsolidator.save();
-	}
-
-	@Override
-	public void onTestFailedButWithinSuccessPercentage(ITestResult result) {
-		// TODO Auto-generated method stub
-		
 	}
 
 	private static String runAs() {
@@ -127,6 +120,12 @@ public class TestListener  implements ITestListener {
 			                      null,
 			                      possibilities,
 			                      "firefox");
+	}
+
+	@Override
+	public void onTestFailedButWithinSuccessPercentage(ITestResult result) {
+		// TODO Auto-generated method stub
+		
 	}	
 	
 }

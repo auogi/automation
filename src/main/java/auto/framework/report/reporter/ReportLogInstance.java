@@ -13,7 +13,7 @@ import auto.framework.report.reporter.ReportLog.TestRoot;
 import auto.framework.report.reporter.ReportLog.TestScenario;
 import auto.framework.report.reporter.ReportLog.TestStep;
 import auto.framework.report.reporter.ReportLog.WebServiceStep;
-import auto.framework.webelement.WebControl;
+import auto.framework.web.WebControl;
 
 public class ReportLogInstance {
 	

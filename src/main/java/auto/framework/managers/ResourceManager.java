@@ -5,9 +5,12 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
-import org.apache.commons.io.FileUtils;
 
-public class Resources {
+import com.google.common.io.Files;
+
+import bsh.This;
+
+public class ResourceManager {
 	
 	public static String findResource(String resource){
 		try {
@@ -23,10 +26,9 @@ public class Resources {
 		return null;
 	}
 	
-	//For Improvement
-	protected static class JarFileToLocal {
-    	
+	protected static class JarFileToLocal {    	
 		public static String findResource(String resource) {
+
 			InputStream stream = JarFileToLocal.class.getResourceAsStream(resource);
 			if (stream!=null) {
 				try {
@@ -39,8 +41,8 @@ public class Resources {
 		}
 		
     	public static File copyTmp(String resource) throws IOException {
-    		//String fileName = new File(resource).getName();
-    		File tmpDir = FileUtils.getTempDirectory();
+    		File tmpDir = Files.createTempDir();
+    		
     		File file = new File(tmpDir,resource);
     		if(file.exists()) return file;
     		

@@ -10,16 +10,6 @@ import auto.framework.report.reporter.ReportLog;
 
 public class TestManager  {
 
-	public static void sleep(long millis){
-		try{ Thread.sleep(millis); } 
-		catch(InterruptedException e) {}
-	}
-	
-	public static void sleep(long millis, int nanos){
-		try{ Thread.sleep(millis, nanos); } 
-		catch(InterruptedException e) {}
-	}
-	
 	public static class Preferences {
 		
 		// envi > testng > config > default

@@ -1,4 +1,4 @@
-package auto.framework.webelement;
+package auto.framework.web.enums;
 
 public class Conditions {
 	
@@ -16,26 +16,7 @@ public class Conditions {
 	public static final Condition<Object> notIsNull =  new Condition.NotIsNull();
 	public static final Condition<Object> isBlank =  new Condition.IsBlank();
 	public static final Condition<Object> notIsBlank =  new Condition.NotIsBlank();
-	
-/*	private static class NegativeCondition<Expected> implements Condition<Expected> {
 
-		private final Condition<Expected> positive;
-		
-		public NegativeCondition(Condition<Expected> positive){
-			this.positive = positive;
-		}
-		
-		@Override
-		public String name() {
-			return "negative<"+positive.name()+">";
-		}
-
-		@Override
-		public Boolean verify(Expected expected, Object actual) {
-			return positive.verify(expected, actual);
-		}
-		
-	}	*/
 
 	public static interface Condition<Expected> {
 		

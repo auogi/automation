@@ -15,13 +15,12 @@ import javax.xml.transform.stream.StreamSource;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
-import auto.framework.managers.Resources;
+import auto.framework.managers.ResourceManager;
 import auto.framework.managers.TestManager;
 
 public class ReportLogConsolidator {
 	
 	protected ReportXmlFactory xmlFactory = new ReportXmlFactory();
-	
 	private static ArrayList<ReportLogInstance> reports = new ArrayList<ReportLogInstance>();
 	
 	public void addReport(ReportLogInstance report){
@@ -52,10 +51,10 @@ public class ReportLogConsolidator {
 			
 			String styleSheetFile = TestManager.Preferences.getPreference("styleSheet", "/reportlog/stylesheet.xsl");
 			System.err.println("Configured StyleSheet:" +styleSheetFile);
-			String styleSheet = Resources.findResource(styleSheetFile);
+			String styleSheet = ResourceManager.findResource(styleSheetFile);
 			System.err.println("Selected StyleSheet:" +styleSheet);
 			if(styleSheet==null){
-				styleSheet = Resources.findResource("/reportlog/"+styleSheetFile);
+				styleSheet = ResourceManager.findResource("/reportlog/"+styleSheetFile);
 			}
 			
 			System.err.println("Selected StyleSheet:" +styleSheet);

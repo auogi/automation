@@ -1,124 +1,129 @@
-<?xml version="1.0" encoding="UTF-8"?><root>
-    <test-scenario browser="firefox" endTime="N/A" name="Default test" startTime="01/15/2019 02:01 PM" status="Passed">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<root>
+    <test-scenario browser="firefox" endTime="N/A" name="Default test" startTime="02/04/2019 12:36 AM" status="Passed">
         <test-case name="Validate Behavior when fields are blank during sign up">
             <summary>
-                <info desc="01/15/2019 02:01 PM" name="Time Started"/>
+                <info desc="02/04/2019 12:36 AM" name="Time Started"/>
                 <info desc="N/A" name="Time Ended"/>
                 <info desc="N/A" name="Time Elapsed"/>
             </summary>
             <test-step name="Validate that all the Fields that are blank are highlighted in red">
-                <report desc="Navigate to https://facebook.com" status="Passed" timestamp="01/15/2019 02:01 PM"/>
-                <report desc="[Submit Button] Click element" status="Passed" timestamp="01/15/2019 02:01 PM"/>
-                <report desc="Verify that FirstName is focused and is showing a tooltip with Message: &quot;What's your name?&quot;" status="Passed" timestamp="01/15/2019 02:01 PM"/>
-                <report desc="Verify that LastName field is highlighted in red" status="Passed" timestamp="01/15/2019 02:01 PM"/>
-                <report desc="Verify that Mobile/Email field is highlighted in red" status="Passed" timestamp="01/15/2019 02:01 PM"/>
-                <report desc="Verify that Password field is highlighted in red" status="Passed" timestamp="01/15/2019 02:01 PM"/>
-                <report desc="Verify that Password field is not highlighted in red" status="Failed" timestamp="01/15/2019 02:01 PM"/>
-                <report desc="Verify that Gender Radio Buttons are highlighted in red" status="Passed" timestamp="01/15/2019 02:01 PM"/>
+                <report desc="Navigate to https://facebook.com" status="Passed" timestamp="02/04/2019 12:36 AM"/>
+                <report desc="[Submit Button Button] Click element" status="Passed" timestamp="02/04/2019 12:36 AM"/>
+                <report desc="Verify that FirstName is focused and is showing a tooltip with Message: &quot;What's your name?&quot;" status="Passed" timestamp="02/04/2019 12:36 AM"/>
+                <report desc="Verify that LastName field is highlighted in red" status="Passed" timestamp="02/04/2019 12:36 AM"/>
+                <report desc="Verify that Mobile/Email field is highlighted in red" status="Passed" timestamp="02/04/2019 12:36 AM"/>
+                <report desc="Verify that Password field is highlighted in red" status="Passed" timestamp="02/04/2019 12:36 AM"/>
+                <report desc="[Password TextBox TextBox] Unable to locate element" status="Failed" timestamp="02/04/2019 12:36 AM"/>
+                <report desc="Verify that Password field is not highlighted in red" status="Failed" timestamp="02/04/2019 12:36 AM"/>
+                <report desc="Verify that Gender Radio Buttons are highlighted in red" status="Passed" timestamp="02/04/2019 12:36 AM"/>
             </test-step>
             <test-step name="Validate that if a textbox field is focused, that field will display a tooltip">
-                <report desc="[LastName TextBox] Click element" status="Passed" timestamp="01/15/2019 02:01 PM"/>
-                <report desc="Verify that LastName is focused and is showing a tooltip with Message: &quot;What's your name?&quot;" status="Passed" timestamp="01/15/2019 02:01 PM"/>
-                <report desc="Verify that FirstName field is highlighted in red" status="Passed" timestamp="01/15/2019 02:01 PM"/>
-                <report desc="[Mobile or Email TextBox] Click element" status="Passed" timestamp="01/15/2019 02:01 PM"/>
-                <report desc="Verify that Mobile/Email is focused and is showing a tooltip with Message: &quot;You’ll use this when you log in and if you ever need to reset your password.&quot;" status="Passed" timestamp="01/15/2019 02:01 PM"/>
-                <report desc="Verify that LastName field is highlighted in red" status="Passed" timestamp="01/15/2019 02:01 PM"/>
+                <report desc="[LastName TextBox TextBox] Click element" status="Passed" timestamp="02/04/2019 12:36 AM"/>
+                <report desc="Verify that LastName is focused and is showing a tooltip with Message: &quot;What's your name?&quot;" status="Passed" timestamp="02/04/2019 12:36 AM"/>
+                <report desc="Verify that FirstName field is highlighted in red" status="Passed" timestamp="02/04/2019 12:36 AM"/>
+                <report desc="[Mobile or Email TextBox TextBox] Click element" status="Passed" timestamp="02/04/2019 12:36 AM"/>
+                <report desc="Verify that Mobile/Email is focused and is showing a tooltip with Message: &quot;You’ll use this when you log in and if you ever need to reset your password.&quot;" status="Passed" timestamp="02/04/2019 12:36 AM"/>
+                <report desc="Verify that LastName field is highlighted in red" status="Passed" timestamp="02/04/2019 12:36 AM"/>
             </test-step>
             <test-step name="Validate that if a Gender is selected, the red highlight disappears">
-                <report desc="[Male Radio Button] Click element" status="Passed" timestamp="01/15/2019 02:01 PM"/>
-                <report desc="Verify that Gender Radio Buttons are not highlighted in red after selecting a gender" status="Passed" timestamp="01/15/2019 02:01 PM"/>
+                <report desc="[Male Radio Button RadioButton] Click element" status="Passed" timestamp="02/04/2019 12:36 AM"/>
+                <report desc="Verify that Gender Radio Buttons are not highlighted in red after selecting a gender" status="Passed" timestamp="02/04/2019 12:36 AM"/>
             </test-step>
             <test-step name="Validate that if all the text fields are populated the red highlight disappears">
-                <report desc="[FirstName TextBox] Type &quot;Tester&quot;" status="Passed" timestamp="01/15/2019 02:01 PM"/>
-                <report desc="[LastName TextBox] Type &quot;Tester&quot;" status="Passed" timestamp="01/15/2019 02:01 PM"/>
-                <report desc="[Mobile or Email TextBox] Type &quot;Tester3241@gmail.com&quot;" status="Passed" timestamp="01/15/2019 02:01 PM"/>
-                <report desc="[Mobile or Email Confirm TextBox] Type &quot;Tester3241@gmail.com&quot;" status="Passed" timestamp="01/15/2019 02:01 PM"/>
-                <report desc="[Birthday Day] Select Text &quot;2&quot;" status="Passed" timestamp="01/15/2019 02:01 PM"/>
-                <report desc="[Birthday Month] Select Text &quot;Aug&quot;" status="Passed" timestamp="01/15/2019 02:01 PM"/>
-                <report desc="[Birthday Year] Select Text &quot;1986&quot;" status="Passed" timestamp="01/15/2019 02:01 PM"/>
-                <report desc="[Password TextBox] Type &quot;Password1!&quot;" status="Passed" timestamp="01/15/2019 02:01 PM"/>
-                <report desc="[Male Radio Button] Click element" status="Passed" timestamp="01/15/2019 02:01 PM"/>
-                <report desc="Verify that FirstName field is not highlighted in red" status="Passed" timestamp="01/15/2019 02:01 PM"/>
-                <report desc="Verify that LastName field is not highlighted in red" status="Passed" timestamp="01/15/2019 02:01 PM"/>
-                <report desc="Verify that Mobile/Email field is not highlighted in red" status="Passed" timestamp="01/15/2019 02:01 PM"/>
-                <report desc="Verify that Password field is not highlighted in red" status="Passed" timestamp="01/15/2019 02:01 PM"/>
+                <report desc="[FirstName TextBox TextBox] Type &quot;Tester&quot;" status="Passed" timestamp="02/04/2019 12:36 AM"/>
+                <report desc="[LastName TextBox TextBox] Type &quot;Tester&quot;" status="Passed" timestamp="02/04/2019 12:36 AM"/>
+                <report desc="[Mobile or Email TextBox TextBox] Type &quot;Tester3241@gmail.com&quot;" status="Passed" timestamp="02/04/2019 12:36 AM"/>
+                <report desc="[Mobile or Email Confirm TextBox TextBox] Type &quot;Tester3241@gmail.com&quot;" status="Passed" timestamp="02/04/2019 12:36 AM"/>
+                <report desc="[Birthday Day Dropdown] Select Text &quot;2&quot;" status="Passed" timestamp="02/04/2019 12:36 AM"/>
+                <report desc="[Birthday Month Dropdown] Select Text &quot;Aug&quot;" status="Passed" timestamp="02/04/2019 12:36 AM"/>
+                <report desc="[Birthday Year Dropdown] Select Text &quot;1986&quot;" status="Passed" timestamp="02/04/2019 12:36 AM"/>
+                <report desc="[Password TextBox TextBox] Type &quot;Password1!&quot;" status="Passed" timestamp="02/04/2019 12:36 AM"/>
+                <report desc="[Male Radio Button RadioButton] Click element" status="Passed" timestamp="02/04/2019 12:36 AM"/>
+                <report desc="Verify that FirstName field is not highlighted in red" status="Passed" timestamp="02/04/2019 12:36 AM"/>
+                <report desc="Verify that LastName field is not highlighted in red" status="Passed" timestamp="02/04/2019 12:36 AM"/>
+                <report desc="Verify that Mobile/Email field is not highlighted in red" status="Passed" timestamp="02/04/2019 12:36 AM"/>
+                <report desc="Verify that Password field is not highlighted in red" status="Passed" timestamp="02/04/2019 12:36 AM"/>
             </test-step>
         </test-case>
         <test-case name="Validate FirstName and LastName Field Signup Requirement">
             <summary>
-                <info desc="01/15/2019 02:01 PM" name="Time Started"/>
+                <info desc="02/04/2019 12:36 AM" name="Time Started"/>
                 <info desc="N/A" name="Time Ended"/>
                 <info desc="N/A" name="Time Elapsed"/>
             </summary>
             <test-step name="Validate that if you enter numbers as FirstName, error should be displayed">
-                <report desc="[FirstName TextBox] Type &quot;1234567&quot;" status="Passed" timestamp="01/15/2019 02:01 PM"/>
-                <report desc="[Submit Button] Click element" status="Passed" timestamp="01/15/2019 02:01 PM"/>
-                <report desc="Verify that if you enter a number in the first name, error should show upon sign up" status="Passed" timestamp="01/15/2019 02:01 PM"/>
+                <report desc="[FirstName TextBox TextBox] Type &quot;1234567&quot;" status="Passed" timestamp="02/04/2019 12:36 AM"/>
+                <report desc="[Submit Button Button] Click element" status="Passed" timestamp="02/04/2019 12:36 AM"/>
+                <report desc="Verify that if you enter a number in the first name, error should show upon sign up" status="Passed" timestamp="02/04/2019 12:36 AM"/>
             </test-step>
             <test-step name="Validate that if you enter numbers as LastName, error should be displayed">
-                <report desc="[LastName TextBox] Type &quot;1234567&quot;" status="Passed" timestamp="01/15/2019 02:01 PM"/>
-                <report desc="[Submit Button] Click element" status="Passed" timestamp="01/15/2019 02:01 PM"/>
-                <report desc="Verify that if you enter a number in the last name, error should show upon sign up" status="Passed" timestamp="01/15/2019 02:01 PM"/>
-                <report desc="[FirstName TextBox] Type &quot;Tester&quot;" status="Passed" timestamp="01/15/2019 02:01 PM"/>
-                <report desc="[LastName TextBox] Type &quot;Tester&quot;" status="Passed" timestamp="01/15/2019 02:01 PM"/>
+                <report desc="[LastName TextBox TextBox] Type &quot;1234567&quot;" status="Passed" timestamp="02/04/2019 12:36 AM"/>
+                <report desc="[Submit Button Button] Click element" status="Passed" timestamp="02/04/2019 12:36 AM"/>
+                <report desc="Verify that if you enter a number in the last name, error should show upon sign up" status="Passed" timestamp="02/04/2019 12:36 AM"/>
+                <report desc="[FirstName TextBox TextBox] Type &quot;Tester&quot;" status="Passed" timestamp="02/04/2019 12:36 AM"/>
+                <report desc="[LastName TextBox TextBox] Type &quot;Tester&quot;" status="Passed" timestamp="02/04/2019 12:36 AM"/>
             </test-step>
         </test-case>
         <test-case name="Validate Email/Mobile Number Field Signup Requirement">
             <summary>
-                <info desc="01/15/2019 02:01 PM" name="Time Started"/>
+                <info desc="02/04/2019 12:36 AM" name="Time Started"/>
                 <info desc="N/A" name="Time Ended"/>
                 <info desc="N/A" name="Time Elapsed"/>
             </summary>
             <test-step name="Validate that if the value for the Mob/Email is a mobile number that doesnt have the right number of digits it should throw an error">
-                <report desc="[Mobile or Email TextBox] Type &quot;1&quot;" status="Passed" timestamp="01/15/2019 02:01 PM"/>
-                <report desc="Verify that Confirmation Mob/Email field is highlighted in red when number of digit is less than 10" status="Passed" timestamp="01/15/2019 02:01 PM"/>
-                <report desc="[Mobile or Email TextBox] Type &quot;42589254161111&quot;" status="Passed" timestamp="01/15/2019 02:01 PM"/>
-                <report desc="Verify that Confirmation Mob/Email field is highlighted in red when number of digit is greater than 10" status="Passed" timestamp="01/15/2019 02:01 PM"/>
-                <report desc="[Mobile or Email TextBox] Type &quot;425892541A&quot;" status="Passed" timestamp="01/15/2019 02:01 PM"/>
-                <report desc="Verify that Confirmation Mob/Email field is highlighted in red when there is a letter on the set of numbers" status="Passed" timestamp="01/15/2019 02:01 PM"/>
+                <report desc="[Mobile or Email TextBox TextBox] Type &quot;1&quot;" status="Passed" timestamp="02/04/2019 12:36 AM"/>
+                <report desc="[Mobile or Email Confirm TextBox TextBox] Unable to locate element" status="Failed" timestamp="02/04/2019 12:36 AM"/>
+                <report desc="Verify that Confirmation Mob/Email field is highlighted in red when number of digit is less than 10" status="Passed" timestamp="02/04/2019 12:36 AM"/>
+                <report desc="[Mobile or Email TextBox TextBox] Type &quot;42589254161111&quot;" status="Passed" timestamp="02/04/2019 12:36 AM"/>
+                <report desc="[Mobile or Email Confirm TextBox TextBox] Unable to locate element" status="Failed" timestamp="02/04/2019 12:36 AM"/>
+                <report desc="Verify that Confirmation Mob/Email field is highlighted in red when number of digit is greater than 10" status="Passed" timestamp="02/04/2019 12:36 AM"/>
+                <report desc="[Mobile or Email TextBox TextBox] Type &quot;425892541A&quot;" status="Passed" timestamp="02/04/2019 12:36 AM"/>
+                <report desc="[Mobile or Email Confirm TextBox TextBox] Unable to locate element" status="Failed" timestamp="02/04/2019 12:36 AM"/>
+                <report desc="Verify that Confirmation Mob/Email field is highlighted in red when there is a letter on the set of numbers" status="Passed" timestamp="02/04/2019 12:36 AM"/>
             </test-step>
             <test-step name="Validate that if an invalid email is entered, the field should display a tooltip">
-                <report desc="[Mobile or Email TextBox] Type &quot;invalidemailaddress&quot;" status="Passed" timestamp="01/15/2019 02:01 PM"/>
-                <report desc="Verify that Mobile/Email field is highlighted in red" status="Passed" timestamp="01/15/2019 02:01 PM"/>
+                <report desc="[Mobile or Email TextBox TextBox] Type &quot;invalidemailaddress&quot;" status="Passed" timestamp="02/04/2019 12:36 AM"/>
+                <report desc="Verify that Mobile/Email field is highlighted in red" status="Passed" timestamp="02/04/2019 12:36 AM"/>
             </test-step>
             <test-step name="Validate that if an emasil is entered, a new field will appear below the email where you have to enter your email again for confirmation">
-                <report desc="[Mobile or Email TextBox] Type &quot;validEmailAddress@gmail.com&quot;" status="Passed" timestamp="01/15/2019 02:01 PM"/>
-                <report desc="Verify that Confirmation Mob/Email field is shown" status="Passed" timestamp="01/15/2019 02:01 PM"/>
+                <report desc="[Mobile or Email TextBox TextBox] Type &quot;validEmailAddress@gmail.com&quot;" status="Passed" timestamp="02/04/2019 12:36 AM"/>
+                <report desc="Verify that Confirmation Mob/Email field is shown" status="Passed" timestamp="02/04/2019 12:36 AM"/>
             </test-step>
             <test-step name="Validate that if the confirmation Mob/Email field is not the same as the Mob/Email field, the confirmation field should be highlighted">
-                <report desc="[Mobile or Email Confirm TextBox] Type &quot;validEmailAddresDifferents@gmail.com&quot;" status="Passed" timestamp="01/15/2019 02:01 PM"/>
-                <report desc="Verify that Confirmation Mob/Email field is highlighted in red" status="Passed" timestamp="01/15/2019 02:01 PM"/>
+                <report desc="[Mobile or Email Confirm TextBox TextBox] Type &quot;validEmailAddresDifferents@gmail.com&quot;" status="Passed" timestamp="02/04/2019 12:36 AM"/>
+                <report desc="Verify that Confirmation Mob/Email field is highlighted in red" status="Passed" timestamp="02/04/2019 12:36 AM"/>
             </test-step>
             <test-step name="Validate that if the confirmation Mob/Email field is the same as the Mob/Email field, the confirmation field should not be highlighted">
-                <report desc="[Mobile or Email Confirm TextBox] Type &quot;validEmailAddress@gmail.com&quot;" status="Passed" timestamp="01/15/2019 02:01 PM"/>
-                <report desc="[Mobile or Email TextBox] Type &quot;validEmailAddress@gmail.com&quot;" status="Passed" timestamp="01/15/2019 02:01 PM"/>
-                <report desc="Verify that Confirmation Mob/Email field is not highlighted in red" status="Passed" timestamp="01/15/2019 02:01 PM"/>
+                <report desc="[Mobile or Email Confirm TextBox TextBox] Type &quot;validEmailAddress@gmail.com&quot;" status="Passed" timestamp="02/04/2019 12:36 AM"/>
+                <report desc="[Mobile or Email TextBox TextBox] Type &quot;validEmailAddress@gmail.com&quot;" status="Passed" timestamp="02/04/2019 12:36 AM"/>
+                <report desc="Verify that Confirmation Mob/Email field is not highlighted in red" status="Passed" timestamp="02/04/2019 12:36 AM"/>
             </test-step>
             <test-step name="Validate that if the value for the Mob/Email is changed to a Mobile number, the Confirmation field should disappear">
-                <report desc="[Mobile or Email TextBox] Type &quot;4258925416&quot;" status="Passed" timestamp="01/15/2019 02:01 PM"/>
-                <report desc="Verify that Confirmation Mob/Email field is not displayed" status="Passed" timestamp="01/15/2019 02:01 PM"/>
+                <report desc="[Mobile or Email TextBox TextBox] Type &quot;4258925416&quot;" status="Passed" timestamp="02/04/2019 12:36 AM"/>
+                <report desc="Verify that Confirmation Mob/Email field is not displayed" status="Passed" timestamp="02/04/2019 12:36 AM"/>
             </test-step>
         </test-case>
         <test-case name="Validate Password Field Signup Requirement">
             <summary>
-                <info desc="01/15/2019 02:01 PM" name="Time Started"/>
-                <info desc="01/15/2019 02:01 PM" name="Time Ended"/>
-                <info desc="0.44 mins" name="Time Elapsed"/>
+                <info desc="02/04/2019 12:36 AM" name="Time Started"/>
+                <info desc="02/04/2019 12:36 AM" name="Time Ended"/>
+                <info desc="0.35 mins" name="Time Elapsed"/>
             </summary>
             <test-step name="Validate that if password is less than 6 characters, error should show upon sign up">
-                <report desc="[Password TextBox] Type &quot;a&quot;" status="Passed" timestamp="01/15/2019 02:01 PM"/>
-                <report desc="[Submit Button] Click element" status="Passed" timestamp="01/15/2019 02:01 PM"/>
-                <report desc="Verify that if password is less than 6 characters, error should show upon sign up" status="Passed" timestamp="01/15/2019 02:01 PM"/>
+                <report desc="[Password TextBox TextBox] Type &quot;a&quot;" status="Passed" timestamp="02/04/2019 12:36 AM"/>
+                <report desc="[Submit Button Button] Click element" status="Passed" timestamp="02/04/2019 12:36 AM"/>
+                <report desc="Verify that if password is less than 6 characters, error should show upon sign up" status="Passed" timestamp="02/04/2019 12:36 AM"/>
             </test-step>
             <test-step name="Validate that if password contains only letters, error should show upon sign up">
-                <report desc="[Password TextBox] Type &quot;aaaaaaaaaaaaaaa&quot;" status="Passed" timestamp="01/15/2019 02:01 PM"/>
-                <report desc="[Submit Button] Click element" status="Passed" timestamp="01/15/2019 02:01 PM"/>
-                <report desc="Verify that if password contains only letters, error should show upon sign up" status="Passed" timestamp="01/15/2019 02:01 PM"/>
+                <report desc="[Password TextBox TextBox] Type &quot;aaaaaaaaaaaaaaa&quot;" status="Passed" timestamp="02/04/2019 12:36 AM"/>
+                <report desc="[Submit Button Button] Click element" status="Passed" timestamp="02/04/2019 12:36 AM"/>
+                <report desc="Verify that if password contains only letters, error should show upon sign up" status="Passed" timestamp="02/04/2019 12:36 AM"/>
             </test-step>
             <test-step name="Validate that if password contains only numbers, error should show upon sign up">
-                <report desc="[Password TextBox] Type &quot;111111111111&quot;" status="Passed" timestamp="01/15/2019 02:01 PM"/>
-                <report desc="[Submit Button] Click element" status="Passed" timestamp="01/15/2019 02:01 PM"/>
-                <report desc="Verify that if password contains only numbers, error should show upon sign up" status="Passed" timestamp="01/15/2019 02:01 PM"/>
+                <report desc="[Password TextBox TextBox] Type &quot;111111111111&quot;" status="Passed" timestamp="02/04/2019 12:36 AM"/>
+                <report desc="[Submit Button Button] Click element" status="Passed" timestamp="02/04/2019 12:36 AM"/>
+                <report desc="Verify that if password contains only numbers, error should show upon sign up" status="Passed" timestamp="02/04/2019 12:36 AM"/>
             </test-step>
         </test-case>
     </test-scenario>
