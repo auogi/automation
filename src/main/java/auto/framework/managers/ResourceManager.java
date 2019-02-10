@@ -8,8 +8,6 @@ import java.io.OutputStream;
 
 import com.google.common.io.Files;
 
-import bsh.This;
-
 public class ResourceManager {
 	
 	public static String findResource(String resource){

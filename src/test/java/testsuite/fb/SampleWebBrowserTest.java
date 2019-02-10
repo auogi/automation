@@ -1,11 +1,8 @@
 package testsuite.fb;
 
 import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.Test;
 
-import auto.framework.managers.WebManager;
 import auto.framework.report.listeners.TestInit;
 import auto.framework.report.reporter.ReportLog;
 import auto.framework.web.WebControl;

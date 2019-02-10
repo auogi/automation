@@ -4,8 +4,6 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-import javax.swing.JOptionPane;
-
 import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
@@ -82,11 +80,12 @@ public class TestListener  implements ITestListener {
 	
 	@Override
 	public void onStart(ITestContext context) {
-		  	Boolean defaultTest =  context.getCurrentXmlTest().getName().equals("Default test");
-			Boolean runAsMethod = defaultTest &&  context.getCurrentXmlTest().toXml("").contains("<methods>");		  			
-			String browserName = TestManager.Preferences.getPreference("browser");
+		String browserName = TestManager.Preferences.getPreference("browser");
+	/*	Boolean defaultTest =  context.getCurrentXmlTest().getName().equals("Default test");
+		Boolean runAsMethod = defaultTest &&  context.getCurrentXmlTest().toXml("").contains("<methods>");		  			
+
 			
-	/*		if(Boolean.valueOf(TestManager.Preferences.getPreference("turnOffSelenium"))){									
+			if(Boolean.valueOf(TestManager.Preferences.getPreference("turnOffSelenium"))){									
 				browserName = "";
 			} else {					
 				if(defaultTest){														
@@ -110,18 +109,13 @@ public class TestListener  implements ITestListener {
 		reportConsolidator.save();
 	}
 
-	private static String runAs() {
-			  Object[] possibilities = {"firefox", "chrome", "ie", "browserStack","headless","none" };
-			  return (String) JOptionPane.showInputDialog(
-			                      null,
-			                      "Run using..",
-			                      "Select WebDriver",
-			                      JOptionPane.PLAIN_MESSAGE,
-			                      null,
-			                      possibilities,
-			                      "firefox");
-	}
-
+	/*
+	 * private static String runAs() { Object[] possibilities = {"firefox",
+	 * "chrome", "ie", "browserStack","headless","none" }; return (String)
+	 * JOptionPane.showInputDialog( null, "Run using..", "Select WebDriver",
+	 * JOptionPane.PLAIN_MESSAGE, null, possibilities, "firefox"); }
+	 */
+	
 	@Override
 	public void onTestFailedButWithinSuccessPercentage(ITestResult result) {
 		// TODO Auto-generated method stub

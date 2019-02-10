@@ -6,8 +6,6 @@ import java.util.Properties;
 
 import org.testng.Reporter;
 
-import auto.framework.report.reporter.ReportLog;
-
 public class TestManager  {
 
 	public static class Preferences {

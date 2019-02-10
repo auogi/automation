@@ -37,12 +37,13 @@ public class SampleAPITest {
 	 RequestSpecification request = RestAssured.given();
 	 
 	 JSONObject requestParams = new JSONObject();
-	 requestParams.put("FirstName", "Virender"); // Cast
-	 requestParams.put("LastName", "Singh");
-	 requestParams.put("UserName", "sdimpleuser2dd2011");
-	 requestParams.put("Password", "password1");
-	 
-	 requestParams.put("Email",  "sample2ee26d9@gmail.com");
+		/*
+		 * requestParams.put("FirstName", "Virender"); // Cast
+		 * requestParams.put("LastName", "Singh"); requestParams.put("UserName",
+		 * "sdimpleuser2dd2011"); requestParams.put("Password", "password1");
+		 * 
+		 * requestParams.put("Email", "sample2ee26d9@gmail.com");
+		 */
 	 request.body(requestParams.toJSONString());
 	 Response response = request.post("/register");
 

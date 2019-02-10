@@ -243,28 +243,5 @@ public class ReportLogInstance {
 	
 	public void attachFile(String name, String file){
 		getCurrentStep().attachFile(name, file);
-	}
-	
-	//TODO: Work In Progress
-	synchronized public void save() {
-//		try {
-//			//TransformerFactory transformerFactory = TransformerFactory.newInstance();
-//			File outputFile = new File("./src/test/resources/reports/consolidated/report2.xml");
-//		 	
-//			DOMSource source = new DOMSource(xmlFactory.xmlStream);
-//			
-//			outputFile.getParentFile().mkdirs();
-//			OutputStream htmlFile = new FileOutputStream(outputFile.getCanonicalPath());
-//            //xslTansform.transform(source, new StreamResult(htmlFile));
-//            
-//            TransformerFactory tFactory = TransformerFactory.newInstance();
-//            Transformer transformer = tFactory.newTransformer();
-//            transformer.transform(source,new StreamResult(htmlFile));
-//            
-//            System.out.println(outputFile.getCanonicalPath());
-//		} catch (Exception e){
-//			e.printStackTrace();
-//		}
-	}
-	
+	}	
 }

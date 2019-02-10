@@ -28,7 +28,7 @@ public class Drivers {
 			private void clean() {
 				Runtime rt = Runtime.getRuntime();
 				try {
-					Process proc = rt.exec("taskkill /im geckodriver.exe /f /t");
+					rt.exec("taskkill /im geckodriver.exe /f /t");
 				} catch (IOException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
@@ -63,7 +63,7 @@ public class Drivers {
 			private void clean() {
 				Runtime rt = Runtime.getRuntime();
 				try {
-					Process proc = rt.exec("taskkill /im chrome.exe /f /t");
+					rt.exec("taskkill /im chrome.exe /f /t");
 				} catch (IOException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
